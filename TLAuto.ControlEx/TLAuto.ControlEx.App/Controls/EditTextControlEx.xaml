@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="TLAuto.ControlEx.App.Controls.EditTextControlEx"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:TLAuto.ControlEx.App.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <controls:EditTextControl x:Name="EditControl" EditTextChanged="EditControl_EditTextChanged" />
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,0,0,0">
+            <Button x:Name="BtnEdit" Content="Edit" Width="70" Click="EditButton_Click" />
+            <Button x:Name="BtnUpdate" Content="Update" Width="70" Margin="5,0,0,0" Click="UpdateButton_Click" Visibility="Collapsed" />
+        </StackPanel>
+    </Grid>
+</UserControl>

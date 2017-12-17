@@ -1,0 +1,21 @@
+﻿<extensions:ApplicationEx x:Class="TLAuto.ControlEx.App.App"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:extensions="clr-namespace:TLAuto.BaseEx.Extensions;assembly=TLAuto.BaseEx"
+                          xmlns:attachedPropertys="clr-namespace:TLAuto.BaseEx.AttachedPropertys;assembly=TLAuto.BaseEx"
+                          StartupUri="Views/MainView.xaml">
+    <extensions:ApplicationEx.Resources>
+        <ResourceDictionary>
+            <!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Lib.Themes.Default;component/Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>-->
+            <Style x:Key="WindowIconStyle" TargetType="Window">
+                <Setter Property="Icon" Value="Resource/Image/control.ico" />
+            </Style>
+            <Style x:Key="WindowIconStyleForDialog" TargetType="Window" BasedOn="{StaticResource WindowIconStyle}">
+                <Setter Property="ResizeMode" Value="NoResize" />
+                <Setter Property="attachedPropertys:AttachedWindowStyle.HasCenterScreen" Value="true" />
+            </Style>
+        </ResourceDictionary>
+    </extensions:ApplicationEx.Resources>
+</extensions:ApplicationEx>

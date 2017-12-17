@@ -1,0 +1,41 @@
+﻿<Window x:Class="TLAuto.Device.Controls.NavFrame.NavFrameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:navFrame="clr-namespace:TLAuto.Device.Controls.NavFrame"
+        mc:Ignorable="d"
+        Title="导航" Height="330" Width="500" x:Name="NavControl">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="7.5*" />
+        </Grid.ColumnDefinitions>
+        <ItemsControl Padding="10" x:Name="NavItemsControl" Background="{Binding NavTitleContentBackground, ElementName=NavControl}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="navFrame:NavFrameInfo">
+                    <StackPanel Orientation="Horizontal">
+                        <Path x:Name="NavIcon" Visibility="Hidden" Fill="Red" Data="M 0,-4 L 4,0 0,4" Margin="0,2,2,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding NavTitle}" />
+                    </StackPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsShow}" Value="true">
+                            <Setter TargetName="NavIcon" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Frame x:Name="DeviceFrame" Grid.Row="0" Grid.Column="1" NavigationUIVisibility="Hidden" Padding="10,0,10,10"
+               Background="{Binding NavFrameContentBackground, ElementName=NavControl}" Navigated="DeviceFrame_Navigated" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right"
+                    VerticalAlignment="Center" Margin="0,10,10,10">
+            <Button x:Name="NavBackButton" Content="上一步" IsEnabled="{Binding ElementName=DeviceFrame, Path=CanGoBack}" Margin="0,0,5,0" Click="NavBack_Click" />
+            <Button x:Name="NavForwardButton" Content="下一步" Click="NavForward_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

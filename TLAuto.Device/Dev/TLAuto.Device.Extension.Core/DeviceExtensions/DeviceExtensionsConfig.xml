@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<DeviceExtensionsConfig>
+  <DeviceConfigs>
+    <DeviceDllConfig>
+      <!--<Path>DeviceExtensions\Projector</Path>-->
+      <DllName>TLAuto.Device.Projector.View</DllName>
+    </DeviceDllConfig>
+    <DeviceDllConfig>
+      <!--<Path>DeviceExtensions\PLC</Path>-->
+      <DllName>TLAuto.Device.PLC.View</DllName>
+    </DeviceDllConfig>
+    <DeviceDllConfig>
+      <!--<Path>DeviceExtensions\DMX</Path>-->
+      <DllName>TLAuto.Device.DMX.View</DllName>
+    </DeviceDllConfig>
+    <DeviceDllConfig>
+      <!--<Path>DeviceExtensions\IoT</Path>-->
+      <DllName>TLAuto.Device.IoT.View</DllName>
+    </DeviceDllConfig>
+  </DeviceConfigs>
+</DeviceExtensionsConfig>

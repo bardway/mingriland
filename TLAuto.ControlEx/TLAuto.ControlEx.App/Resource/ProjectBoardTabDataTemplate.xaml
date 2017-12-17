@@ -1,0 +1,127 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:command="http://www.galasoft.ch/mvvmlight"
+                    xmlns:models="clr-namespace:TLAuto.ControlEx.App.Models"
+                    xmlns:behaviors="clr-namespace:TLAuto.ControlEx.App.Behaviors">
+    <DataTemplate x:Key="BoardGroupDataTemplate" DataType="models:BoardGroupXmlInfo">
+        <Expander Margin="5" Header="{Binding}" IsExpanded="{Binding IsExpanded, Mode=TwoWay}">
+            <Expander.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="TxtTitle" Text="开关量采集板" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                        <Button Content="+" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding AddBoardCommand}" />
+                        <Button Content="-" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding RemoveBoardCommand}" />
+                        <Button Content="↑" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding UpBoardCommand}" />
+                        <Button Content="↓" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding DownBoardCommand}" />
+                    </StackPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding BoardType}" Value="OutputA">
+                            <Setter TargetName="TxtTitle" Property="Text" Value="继电器控制板" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Expander.HeaderTemplate>
+            <ItemsControl Margin="5" ItemsSource="{Binding BoardInfos}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="2" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <GroupBox Header="{Binding}">
+                            <GroupBox.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" />
+                                        <TextBlock Text="{Binding BoardName}" VerticalAlignment="Center" Margin="5,0,0,0" />
+                                        <TextBlock Text="设备号：" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                        <TextBlock Text="{Binding DeviceNumber}" VerticalAlignment="Center" />
+                                        <TextBlock Text="通讯地址Mark：" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                        <TextBlock Text="{Binding ServiceAddressMark}" VerticalAlignment="Center" />
+                                        <TextBlock Text="别名：" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                        <TextBlock Text="{Binding SignName}" VerticalAlignment="Center" />
+                                        <Button Width="18" Height="18" VerticalAlignment="Center" Margin="10,0,0,0" Command="{Binding EditCommand}">
+                                            <Image Source="Image/edit.png" />
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupBox.HeaderTemplate>
+                            <ItemsControl ItemsSource="{Binding BoardItemInfos}" Margin="5">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Height="240" ItemHeight="30" ItemWidth="100" Orientation="Vertical" IsItemsHost="True" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid x:Name="Main" Margin="5">
+                                            <Grid.ToolTip>
+                                                <ToolTip Content="{Binding}">
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="Opened">
+                                                            <command:EventToCommand Command="{Binding ToolTipOpenedCommand}" />
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                    <ToolTip.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding ToolTip}" />
+                                                                <ItemsControl Margin="5" ItemsSource="{Binding Descriptions}" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ToolTip.ContentTemplate>
+                                                </ToolTip>
+                                            </Grid.ToolTip>
+                                            <Button x:Name="MainBt" Content="{Binding}" Background="Green" Command="{Binding BoardItemClickCommand}"
+                                                    HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                                <Button.ContentTemplate>
+                                                    <DataTemplate>
+                                                        <Grid>
+                                                            <Border x:Name="BdRunning" Background="Red" Visibility="Hidden" />
+                                                            <StackPanel Orientation="Horizontal" TextElement.Foreground="White">
+                                                                <TextBlock Text="{Binding Number}" VerticalAlignment="Center" />
+                                                                <TextBlock Text="{Binding ToolTip}" VerticalAlignment="Center" Margin="5,0,0,0" TextTrimming="CharacterEllipsis" />
+                                                            </StackPanel>
+                                                            <Popup IsOpen="{Binding IsOpenToolTipPopup, Mode=TwoWay}" Placement="Mouse" StaysOpen="False" AllowsTransparency="True">
+                                                                <Popup.Child>
+                                                                    <Border Background="White" Padding="5" CornerRadius="4" BorderThickness="2" BorderBrush="Gray">
+                                                                        <GroupBox x:Name="Gb" Header="提示填写" Padding="10">
+                                                                            <StackPanel>
+                                                                                <TextBox Text="{Binding ToolTip, Mode=TwoWay}" Width="150">
+                                                                                    <i:Interaction.Behaviors>
+                                                                                        <behaviors:TextBoxGetFocusBehavior />
+                                                                                    </i:Interaction.Behaviors>
+                                                                                </TextBox>
+                                                                                <Button HorizontalAlignment="Right" Width="70" Content="OK" Margin="0,5,0,0" IsDefault="True" Command="{Binding BoardItemClickCommand}" />
+                                                                            </StackPanel>
+                                                                        </GroupBox>
+                                                                    </Border>
+                                                                </Popup.Child>
+                                                            </Popup>
+                                                        </Grid>
+                                                        <DataTemplate.Triggers>
+                                                            <DataTrigger Binding="{Binding IsNo}" Value="True">
+                                                                <Setter TargetName="BdRunning" Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </DataTemplate.Triggers>
+                                                    </DataTemplate>
+                                                </Button.ContentTemplate>
+                                            </Button>
+                                        </Grid>
+                                        <DataTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </GroupBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Expander>
+    </DataTemplate>
+</ResourceDictionary>

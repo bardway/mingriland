@@ -1,0 +1,54 @@
+﻿<extensions:ApplicationEx x:Class="TLAuto.Device.ServerHost.App"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:extensions="clr-namespace:TLAuto.BaseEx.Extensions;assembly=TLAuto.BaseEx"
+                          xmlns:viewModels="clr-namespace:TLAuto.Device.ServerHost.ViewModels"
+                          xmlns:attachedPropertys="clr-namespace:TLAuto.BaseEx.AttachedPropertys;assembly=TLAuto.BaseEx"
+                          xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                          xmlns:navFrame="clr-namespace:TLAuto.Device.Controls.NavFrame;assembly=TLAuto.Device.Controls"
+                          StartupUri="Views/MainView.xaml">
+    <extensions:ApplicationEx.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/TLAuto.Themes.Default;component/Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <viewModels:ViewModelLocator x:Key="Locator" />
+            <converters:EnumDescriptionConverter x:Key="EnumDescriptionConvert" />
+
+            <Style x:Key="WindowIconStyle" TargetType="Window" BasedOn="{StaticResource WindowStyleBase}">
+                <Setter Property="Icon" Value="Resource/Image/Device.ico" />
+                <Setter Property="attachedPropertys:AttachedWindowStyle.HasCenterScreen" Value="true" />
+            </Style>
+
+            <Style x:Key="WindowIconStyleForDialog" TargetType="Window" BasedOn="{StaticResource WindowIconStyle}">
+                <Setter Property="ResizeMode" Value="NoResize" />
+            </Style>
+
+            <SolidColorBrush x:Key="NavTitleContentBackgroundThemeBrush" Color="#3E3E42" />
+            <SolidColorBrush x:Key="NavFrameContentBackgroundThemeBrush" Color="#2D2D2D" />
+
+            <Style TargetType="navFrame:NavFrameWindow" BasedOn="{StaticResource WindowIconStyle}">
+                <Setter Property="NavTitleContentBackground" Value="{StaticResource NavTitleContentBackgroundThemeBrush}" />
+                <Setter Property="NavFrameContentBackground" Value="{StaticResource NavFrameContentBackgroundThemeBrush}" />
+            </Style>
+
+            <Style x:Key="ServiceTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
+                <Setter Property="Width" Value="80" />
+                <Setter Property="Height" Value="21" />
+            </Style>
+
+            <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyleBase}">
+                <Setter Property="Height" Value="21" />
+            </Style>
+
+            <DataTemplate x:Key="ComBoxEnumItemTemplate">
+                <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConvert}}" />
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </extensions:ApplicationEx.Resources>
+</extensions:ApplicationEx>

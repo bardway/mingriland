@@ -1,0 +1,118 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.ControlEx.App", "TLAuto.ControlEx.App\TLAuto.ControlEx.App.csproj", "{4F2F6352-849D-467C-8EBD-E3B0BFEEF2CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{236C0B2E-FF95-4AF1-8DA4-7A25557B6B4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TLAuto.Lib", "TLAuto.Lib", "{3EDEB69B-7F22-4795-950D-952CE61B4184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Base", "..\TLAuto.Lib\Main\TLAuto.Base\TLAuto.Base.csproj", "{293E947E-F356-451B-AF27-D16CEF93091B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.BaseEx", "..\TLAuto.Lib\Main\TLAuto.BaseEx\TLAuto.BaseEx.csproj", "{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Log", "..\TLAuto.Lib\Main\TLAuto.Log\TLAuto.Log.csproj", "{C0D5A349-61E8-4F7C-821A-47EE88659610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Wcf", "..\TLAuto.Lib\Main\TLAuto.Wcf\TLAuto.Wcf.csproj", "{712843F8-26C7-413D-84F9-498AB6E80648}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WcfContracts", "WcfContracts", "{8DEDB9B9-F10B-4B7C-8F50-136AE0D5ECB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Music.Contracts", "..\TLAuto.Music\TLAuto.Music.Contracts\TLAuto.Music.Contracts.csproj", "{04E7709A-7361-480B-A7C2-0503F092A957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Notification.Contracts", "..\TLAuto.Notification\TLAuto.Notification.Contracts\TLAuto.Notification.Contracts.csproj", "{911BD64B-CA8D-4641-B95F-735C1D4C0C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Contracts", "..\TLAuto.Device\Dev\TLAuto.Device.Contracts\TLAuto.Device.Contracts.csproj", "{6831F87E-16F9-4DA9-A51F-667446F94BDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F2F6352-849D-467C-8EBD-E3B0BFEEF2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2F6352-849D-467C-8EBD-E3B0BFEEF2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2F6352-849D-467C-8EBD-E3B0BFEEF2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2F6352-849D-467C-8EBD-E3B0BFEEF2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EDEB69B-7F22-4795-950D-952CE61B4184} = {236C0B2E-FF95-4AF1-8DA4-7A25557B6B4A}
+		{293E947E-F356-451B-AF27-D16CEF93091B} = {3EDEB69B-7F22-4795-950D-952CE61B4184}
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624} = {3EDEB69B-7F22-4795-950D-952CE61B4184}
+		{C0D5A349-61E8-4F7C-821A-47EE88659610} = {3EDEB69B-7F22-4795-950D-952CE61B4184}
+		{712843F8-26C7-413D-84F9-498AB6E80648} = {3EDEB69B-7F22-4795-950D-952CE61B4184}
+		{8DEDB9B9-F10B-4B7C-8F50-136AE0D5ECB6} = {236C0B2E-FF95-4AF1-8DA4-7A25557B6B4A}
+		{04E7709A-7361-480B-A7C2-0503F092A957} = {8DEDB9B9-F10B-4B7C-8F50-136AE0D5ECB6}
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76} = {8DEDB9B9-F10B-4B7C-8F50-136AE0D5ECB6}
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD} = {8DEDB9B9-F10B-4B7C-8F50-136AE0D5ECB6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mingriland.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TLAuto.ControlEx.App\\TLAuto.ControlEx.App.csproj
+		SccProjectName1 = TLAuto.ControlEx.App
+		SccLocalPath1 = TLAuto.ControlEx.App
+		SccProjectUniqueName2 = ..\\TLAuto.Lib\\Main\\TLAuto.Base\\TLAuto.Base.csproj
+		SccProjectTopLevelParentUniqueName2 = TLAuto.ControlEx.sln
+		SccProjectName2 = ../TLAuto.Lib/Main/TLAuto.Base
+		SccLocalPath2 = ..\\TLAuto.Lib\\Main\\TLAuto.Base
+		SccProjectUniqueName3 = ..\\TLAuto.Lib\\Main\\TLAuto.BaseEx\\TLAuto.BaseEx.csproj
+		SccProjectTopLevelParentUniqueName3 = TLAuto.ControlEx.sln
+		SccProjectName3 = ../TLAuto.Lib/Main/TLAuto.BaseEx
+		SccLocalPath3 = ..\\TLAuto.Lib\\Main\\TLAuto.BaseEx
+		SccProjectUniqueName4 = ..\\TLAuto.Lib\\Main\\TLAuto.Log\\TLAuto.Log.csproj
+		SccProjectTopLevelParentUniqueName4 = TLAuto.ControlEx.sln
+		SccProjectName4 = ../TLAuto.Lib/Main/TLAuto.Log
+		SccLocalPath4 = ..\\TLAuto.Lib\\Main\\TLAuto.Log
+		SccProjectUniqueName5 = ..\\TLAuto.Lib\\Main\\TLAuto.Wcf\\TLAuto.Wcf.csproj
+		SccProjectTopLevelParentUniqueName5 = TLAuto.ControlEx.sln
+		SccProjectName5 = ../TLAuto.Lib/Main/TLAuto.Wcf
+		SccLocalPath5 = ..\\TLAuto.Lib\\Main\\TLAuto.Wcf
+		SccProjectUniqueName6 = ..\\TLAuto.Music\\TLAuto.Music.Contracts\\TLAuto.Music.Contracts.csproj
+		SccProjectTopLevelParentUniqueName6 = TLAuto.ControlEx.sln
+		SccProjectName6 = ../TLAuto.Music/TLAuto.Music.Contracts
+		SccLocalPath6 = ..\\TLAuto.Music\\TLAuto.Music.Contracts
+		SccProjectUniqueName7 = ..\\TLAuto.Notification\\TLAuto.Notification.Contracts\\TLAuto.Notification.Contracts.csproj
+		SccProjectTopLevelParentUniqueName7 = TLAuto.ControlEx.sln
+		SccProjectName7 = ../TLAuto.Notification/TLAuto.Notification.Contracts
+		SccLocalPath7 = ..\\TLAuto.Notification\\TLAuto.Notification.Contracts
+		SccProjectUniqueName8 = ..\\TLAuto.Device\\Dev\\TLAuto.Device.Contracts\\TLAuto.Device.Contracts.csproj
+		SccProjectTopLevelParentUniqueName8 = TLAuto.ControlEx.sln
+		SccProjectName8 = ../TLAuto.Device/Dev/TLAuto.Device.Contracts
+		SccLocalPath8 = ..\\TLAuto.Device\\Dev\\TLAuto.Device.Contracts
+	EndGlobalSection
+EndGlobal

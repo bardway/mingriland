@@ -1,0 +1,18 @@
+﻿<Window x:Class="TLAuto.LocalVideo.App.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:attachedPropertys="clr-namespace:TLAuto.Video.Controls.AttachedPropertys;assembly=TLAuto.Video.Controls"
+        xmlns:controls="clr-namespace:TLAuto.Video.Controls;assembly=TLAuto.Video.Controls"
+        xmlns:viewModels="clr-namespace:TLAuto.LocalVideo.App.ViewModels"
+        mc:Ignorable="d"
+        Title="MainView" Height="350" Width="525"
+        attachedPropertys:WindowForFullScreenAttachedProperty.VideoWindowType="{Binding VideoWindowType}">
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <controls:VideoControl x:Name="Vc" />
+    </Grid>
+</Window>

@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:templateSelector="clr-namespace:TLAuto.ControlEx.App.TemplateSelector"
+                    xmlns:models="clr-namespace:TLAuto.ControlEx.App.Models"
+                    xmlns:controls="clr-namespace:TLAuto.ControlEx.App.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/BoardControllerExcuteDataTemplate.xaml" />
+        <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/DelayControllerExcuteDataTemplate.xaml" />
+        <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/DMXControllerExcuteDataTemplate.xaml" />
+        <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/ProjectorControllerExcuteDataTemplate.xaml" />
+        <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/MusicControllerExcuteDataTemplate.xaml" />
+        <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/NotificationControllerExcuteDataTemplate.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <templateSelector:ControllerExcuteDataTemplateSelector x:Key="ControllerExcuteDataTemplateSelector"
+                                                           BoardControllerExcuteDataTemplate="{StaticResource BoardControllerExcuteDataTemplate}"
+                                                           DelayControllerExcuteDataTemplate="{StaticResource DelayControllerExcuteDataTemplate}"
+                                                           DMXControllerExcuteDataTemplate="{StaticResource DMXControllerExcuteDataTemplate}"
+                                                           MusicControllerExcuteDataTemplate="{StaticResource MusicControllerExcuteDataTemplate}"
+                                                           NotificationControllerExcuteDataTemplate="{StaticResource NotificationControllerExcuteDataTemplate}"
+                                                           ProjectorControllerExcuteDataTemplate="{StaticResource ProjectorControllerExcuteDataTemplate}" />
+
+    <DataTemplate x:Key="ControllerTabItemDataTemplate" DataType="models:ControllerInfo">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="唯一ID：" VerticalAlignment="Center" />
+                <TextBlock Margin="5,0,0,0" Text="{Binding ItemXmlInfo.CID}" VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="描述：" VerticalAlignment="Center" />
+                <controls:EditTextControlEx Text="{Binding ItemXmlInfo.Description, Mode=TwoWay}" />
+            </StackPanel>
+            <GroupBox Header="{Binding}" Margin="5">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="执行逻辑" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                            <Button Content="+" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding ItemXmlInfo.AddExcuteCommand}" />
+                            <Button Content="-" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding ItemXmlInfo.RemoveExcuteCommand}" />
+                            <Button Content="↑" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding ItemXmlInfo.UpExcuteCommand}" />
+                            <Button Content="↓" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding ItemXmlInfo.DownExcuteCommand}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <ItemsControl ItemsSource="{Binding ItemXmlInfo.Excutes}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <GroupBox Margin="5" Header="{Binding}">
+                                <GroupBox.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" />
+                                            <TextBlock Text="描述：" VerticalAlignment="Center" Margin="5,0,0,0" />
+                                            <controls:EditTextControlEx VerticalAlignment="Center" Text="{Binding Description, Mode=TwoWay}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GroupBox.HeaderTemplate>
+                                <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource ControllerExcuteDataTemplateSelector}" />
+                            </GroupBox>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </GroupBox>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

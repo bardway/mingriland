@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                    xmlns:controlleExcutes="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes">
+    <converters:ClassDescriptionConverter x:Key="ClassDescriptionConvert" />
+
+    <DataTemplate x:Key="DelayControllerExcuteDataTemplate" DataType="controlleExcutes:DelayControllerExcute">
+        <GroupBox Header="{Binding}" Margin="5" Padding="5">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="延时：" VerticalAlignment="Center" />
+                <TextBox Margin="5,0,0,0" Text="{Binding Hours, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="2" VerticalAlignment="Center" Width="20" />
+                <TextBlock Text="时" Margin="2,0,0,0" VerticalAlignment="Center" />
+                <TextBox Margin="5,0,0,0" Text="{Binding Minutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="2" VerticalAlignment="Center" Width="20" />
+                <TextBlock Text="分" Margin="2,0,0,0" VerticalAlignment="Center" />
+                <TextBox Margin="5,0,0,0" Text="{Binding Seconds, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="2" VerticalAlignment="Center" Width="20" />
+                <TextBlock Text="秒" Margin="2,0,0,0" VerticalAlignment="Center" />
+            </StackPanel>
+        </GroupBox>
+    </DataTemplate>
+
+</ResourceDictionary>

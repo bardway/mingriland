@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                    xmlns:dmx="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes.DMX">
+    <converters:ClassDescriptionConverter x:Key="ClassDescriptionConvert" />
+
+    <DataTemplate x:Key="DMXControllerExcuteDataTemplate" DataType="dmx:DMXControllerExcute">
+        <GroupBox Header="{Binding}" Margin="5" Padding="5">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                        <Button Content="+" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding AddDMXItemExcuteCommand}" />
+                        <Button Content="-" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding RemoveDMXItemExcuteCommand}" />
+                        <Button Content="↑" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding UpDMXItemExcuteCommand}" />
+                        <Button Content="↓" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding DownDMXItemExcuteCommand}" />
+                    </StackPanel>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="设备名：" Margin="0,0,5,0" VerticalAlignment="Center" />
+                    <TextBox VerticalAlignment="Center" Text="{Binding DMXSign, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                </StackPanel>
+                <ItemsControl Margin="5" ItemsSource="{Binding DMXChannelInfos}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" />
+                                <TextBlock Text="通道号：" Margin="5,0,5,0" VerticalAlignment="Center" />
+                                <TextBox Text="{Binding ChannelNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" />
+                                <TextBlock Text="通道值：" Margin="5,0,5,0" VerticalAlignment="Center" />
+                                <TextBox Text="{Binding ChannelValue, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </GroupBox>
+    </DataTemplate>
+</ResourceDictionary>

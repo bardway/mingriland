@@ -1,0 +1,78 @@
+﻿<Window x:Class="TLAuto.Device.ServerHost.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:command="http://www.galasoft.ch/mvvmlight"
+        xmlns:converter="clr-namespace:TLAuto.Device.ServerHost.Converter"
+        mc:Ignorable="d" Style="{StaticResource WindowIconStyle}"
+        Title="设备服务集合" MinHeight="600" MinWidth="800"
+        DataContext="{Binding MainViewModel, Source={StaticResource Locator}}" BorderThickness="0">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <command:EventToCommand Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closing">
+            <command:EventToCommand Command="{Binding ClosingCommand}" PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Window.Resources>
+        <ResourceDictionary>
+            <converter:OpenServiceButtonContentConverter x:Key="OpenServiceButtonContentConvert" />
+            <converter:WcfServiceStartToColorConverter x:Key="WcfServiceStartToColorConvert" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="设备">
+                <MenuItem Header="添加设备" Command="{Binding AddDeviceCommand}" />
+                <MenuItem Header="移除设备" Command="{Binding RemoveDeviceCommand}" />
+                <MenuItem Header="导入设备配置" />
+                <MenuItem Header="导出设备配置" />
+            </MenuItem>
+            <MenuItem Header="配置">
+                <MenuItem Header="中控通讯配置（WCF）" Command="{Binding EditWcfDeviceServiceCommand}" />
+                <MenuItem Header="设备通讯配置">
+                    <MenuItem Header="串口通讯配置" />
+                    <MenuItem Header="Wifi通讯配置" />
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding DeviceServiceInfos}" Background="{StaticResource ApplicationMainBackgroundThemeBrush}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Expander Margin="10" Header="{Binding}">
+                            <Expander.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock x:Name="TblServiceTitle" Style="{StaticResource ServiceTitleStyle}" Text="{Binding Description}" />
+                                </DataTemplate>
+                            </Expander.HeaderTemplate>
+                            <ContentControl Margin="25,10,10,0" Content="{Binding DeviceService.View}" />
+                        </Expander>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <StatusBar Grid.Row="2" Padding="10,0,10,0" Height="20" Background="{DynamicResource NavTitleContentBackgroundThemeBrush}">
+            <StatusBarItem Margin="10,0,0,0">
+                <Button Content="打开软件根目录" Style="{StaticResource ButtonForTextBlockStyleBase}" Command="{Binding OpenExplorerCommand}" />
+            </StatusBarItem>
+            <StatusBarItem Margin="0,0,10,0" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding WcfServiceErrorInfo}" Margin="0,0,5,0" VerticalAlignment="Center" />
+                    <Rectangle Width="10" Height="10" Margin="0,0,5,0" Fill="{Binding IsStartWcfService, Converter={StaticResource WcfServiceStartToColorConvert}}" VerticalAlignment="Center" />
+                    <Button Content="{Binding IsStartWcfService, Converter={StaticResource OpenServiceButtonContentConvert}}"
+                            VerticalContentAlignment="Bottom" IsEnabled="{Binding IsEnabledOpenServiceButton, Mode=TwoWay}"
+                            Command="{Binding OpenWcfServiceCommand}" Style="{StaticResource ButtonForTextBlockStyleBase}" />
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

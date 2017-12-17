@@ -1,0 +1,419 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{4AB435C0-CC4B-43E8-9F27-B6D7A15C9584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TLAuto.Lib", "TLAuto.Lib", "{CBF3ADA1-8E5E-4D51-B460-DF20EF4A209C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Base", "..\TLAuto.Lib\Main\TLAuto.Base\TLAuto.Base.csproj", "{293E947E-F356-451B-AF27-D16CEF93091B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.BaseEx", "..\TLAuto.Lib\Main\TLAuto.BaseEx\TLAuto.BaseEx.csproj", "{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Log", "..\TLAuto.Lib\Main\TLAuto.Log\TLAuto.Log.csproj", "{C0D5A349-61E8-4F7C-821A-47EE88659610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Controls", "TLAuto.Machine.Controls\TLAuto.Machine.Controls.csproj", "{18E56D95-B560-4AF0-87EA-46AF0AADDE35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.App", "TLAuto.Machine.App\TLAuto.Machine.App.csproj", "{B1FBCDFD-6692-49EF-B216-33ED7E181517}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36466900-34E7-41B2-814C-F7C0326CA390} = {36466900-34E7-41B2-814C-F7C0326CA390}
+		{708AE103-4311-4E8E-BF00-CC9C7DBADABA} = {708AE103-4311-4E8E-BF00-CC9C7DBADABA}
+		{79E49005-1956-4DF0-B0E0-F7232D7E8814} = {79E49005-1956-4DF0-B0E0-F7232D7E8814}
+		{F16A150F-CA14-44C0-B63E-E47D0F2ED709} = {F16A150F-CA14-44C0-B63E-E47D0F2ED709}
+		{ACA8C322-8AE1-4445-831F-3D62B2DB28F3} = {ACA8C322-8AE1-4445-831F-3D62B2DB28F3}
+		{34EADB24-CA54-42DA-A0E1-C29D89A65727} = {34EADB24-CA54-42DA-A0E1-C29D89A65727}
+		{1503E039-9CA1-43FD-83D7-45098690046F} = {1503E039-9CA1-43FD-83D7-45098690046F}
+		{56B29759-AF19-407A-9C74-F8021452642E} = {56B29759-AF19-407A-9C74-F8021452642E}
+		{BC28168E-2799-4181-A4F5-821210402A86} = {BC28168E-2799-4181-A4F5-821210402A86}
+		{04E7709A-7361-480B-A7C2-0503F092A957} = {04E7709A-7361-480B-A7C2-0503F092A957}
+		{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49} = {BF52B1A0-D83E-4AED-8579-0F53E5BA0F49}
+		{72FA19BA-983C-450A-A808-11EC0968CF66} = {72FA19BA-983C-450A-A808-11EC0968CF66}
+		{534E12C4-6357-4478-9551-E6DA6D8A4EEB} = {534E12C4-6357-4478-9551-E6DA6D8A4EEB}
+		{1355EAC5-FEFC-4196-BC77-A57890E79B2D} = {1355EAC5-FEFC-4196-BC77-A57890E79B2D}
+		{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4} = {325F23E7-37F3-4E11-B4F7-798DB2FE9BD4}
+		{6ED727EC-8934-4DF8-ABB9-22265C86C7FE} = {6ED727EC-8934-4DF8-ABB9-22265C86C7FE}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WcfContracts", "WcfContracts", "{0671F86C-B7C2-437D-98B7-6823AD87D60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Notification.Contracts", "..\TLAuto.Notification\TLAuto.Notification.Contracts\TLAuto.Notification.Contracts.csproj", "{911BD64B-CA8D-4641-B95F-735C1D4C0C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Music.Contracts", "..\TLAuto.Music\TLAuto.Music.Contracts\TLAuto.Music.Contracts.csproj", "{04E7709A-7361-480B-A7C2-0503F092A957}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MachinePlugins", "MachinePlugins", "{00FCDCC8-A64C-4664-ACF7-F92BC3A2060E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Core", "TLAuto.Machine.Plugins.Core\TLAuto.Machine.Plugins.Core.csproj", "{636A3AF9-42A2-4A2B-920D-AA5FCA0525EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Panda(熊猫主题机关集合)", "Panda(熊猫主题机关集合)", "{49557414-174F-4BE5-B99D-39FA75148FCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Boxing", "TLAuto.Machine.Plugins.Boxing\TLAuto.Machine.Plugins.Boxing.csproj", "{534E12C4-6357-4478-9551-E6DA6D8A4EEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Boxing(拳套)", "Boxing(拳套)", "{435D03CC-565F-4FEB-950B-46303816F897}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Wcf", "..\TLAuto.Lib\Main\TLAuto.Wcf\TLAuto.Wcf.csproj", "{712843F8-26C7-413D-84F9-498AB6E80648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Contracts", "..\TLAuto.Device\Dev\TLAuto.Device.Contracts\TLAuto.Device.Contracts.csproj", "{6831F87E-16F9-4DA9-A51F-667446F94BDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sudoku(火焰灯数独互斥)", "Sudoku(火焰灯数独互斥)", "{5144F01E-8742-44DC-8F47-17DA379B483F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Sudoku", "TLAuto.Machine.Plugins.Sudoku\TLAuto.Machine.Plugins.Sudoku.csproj", "{1355EAC5-FEFC-4196-BC77-A57890E79B2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cooking(厨房做饭)", "Cooking(厨房做饭)", "{A69CDB6F-82F6-4140-AB6B-B04B3057C2F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Cooking", "TLAuto.Machine.Plugins.Cooking\TLAuto.Machine.Plugins.Cooking.csproj", "{79E49005-1956-4DF0-B0E0-F7232D7E8814}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HitMouse(梅花桩)", "HitMouse(梅花桩)", "{6CB6F566-E7D5-4DCB-8CA0-176CF9A4B7C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.HitMouse", "TLAuto.Machine.Plugins.HitMouse\TLAuto.Machine.Plugins.HitMouse.csproj", "{72FA19BA-983C-450A-A808-11EC0968CF66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Touching(太极火线)", "Touching(太极火线)", "{1C891690-5FD1-447C-91CF-82E9697A6EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Touching", "TLAuto.Machine.Plugins.Touching\TLAuto.Machine.Plugins.Touching.csproj", "{6ED727EC-8934-4DF8-ABB9-22265C86C7FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common(公用)", "Common(公用)", "{F495D813-406F-479E-AEB8-52FE38D3BF2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.CheckPressButtons", "TLAuto.Machine.Plugins.CheckPressButtons\TLAuto.Machine.Plugins.CheckPressButtons.csproj", "{F16A150F-CA14-44C0-B63E-E47D0F2ED709}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "King", "King", "{D2794281-4412-4C13-B13C-8D710BB0BC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.TestButtonNumber", "TLAuto.Machine.Plugins.TestButtonNumber\TLAuto.Machine.Plugins.TestButtonNumber.csproj", "{BC28168E-2799-4181-A4F5-821210402A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Argue", "TLAuto.Machine.Plugins.Argue\TLAuto.Machine.Plugins.Argue.csproj", "{708AE103-4311-4E8E-BF00-CC9C7DBADABA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Battle", "TLAuto.Machine.Plugins.Battle\TLAuto.Machine.Plugins.Battle.csproj", "{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Crystals", "TLAuto.Machine.Plugins.Crystals\TLAuto.Machine.Plugins.Crystals.csproj", "{36466900-34E7-41B2-814C-F7C0326CA390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.HitCheckTask", "TLAuto.Machine.Plugins.HitCheckTask\TLAuto.Machine.Plugins.HitCheckTask.csproj", "{34EADB24-CA54-42DA-A0E1-C29D89A65727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Guard", "TLAuto.Machine.Plugins.Guard\TLAuto.Machine.Plugins.Guard.csproj", "{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Maid", "TLAuto.Machine.Plugins.Maid\TLAuto.Machine.Plugins.Maid.csproj", "{ACA8C322-8AE1-4445-831F-3D62B2DB28F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Runes", "TLAuto.Machine.Plugins.Runes\TLAuto.Machine.Plugins.Runes.csproj", "{56B29759-AF19-407A-9C74-F8021452642E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Knocking", "TLAuto.Machine.Plugins.Knocking\TLAuto.Machine.Plugins.Knocking.csproj", "{1503E039-9CA1-43FD-83D7-45098690046F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Eyes", "TLAuto.Machine.Plugins.Eyes\TLAuto.Machine.Plugins.Eyes.csproj", "{17CD467B-E0BA-40C9-875F-D2756787CDC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Arsh", "TLAuto.Machine.Plugins.Arsh\TLAuto.Machine.Plugins.Arsh.csproj", "{4C100E84-8854-4A23-8684-A301CCBFD5D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Help", "Help", "{F2FA98DE-DA30-441A-B6C3-FB2413692B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Help", "TLAuto.Machine.Plugins.Help\TLAuto.Machine.Plugins.Help.csproj", "{2344A9D8-9A93-4746-9343-7983F3C09765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Video.Contracts", "..\TLAuto.Video\TLAuto.Video.Contracts\TLAuto.Video.Contracts.csproj", "{BFC458F2-0C36-4321-9241-F0DE43F96126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Listen", "TLAuto.Machine.Plugins.Listen\TLAuto.Machine.Plugins.Listen.csproj", "{7EE38B07-AE50-43A6-9E8F-65E5B84FCAA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Candle(蜡烛)", "Candle(蜡烛)", "{91F4FCF6-5C4A-4C90-B5F8-5C950A09DFFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Machine.Plugins.Candle", "TLAuto.Machine.Plugins.Candle\TLAuto.Machine.Plugins.Candle.csproj", "{365E3553-EF3A-4C86-9E9A-851B1EFD2A7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E56D95-B560-4AF0-87EA-46AF0AADDE35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E56D95-B560-4AF0-87EA-46AF0AADDE35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E56D95-B560-4AF0-87EA-46AF0AADDE35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E56D95-B560-4AF0-87EA-46AF0AADDE35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FBCDFD-6692-49EF-B216-33ED7E181517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FBCDFD-6692-49EF-B216-33ED7E181517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FBCDFD-6692-49EF-B216-33ED7E181517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FBCDFD-6692-49EF-B216-33ED7E181517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E7709A-7361-480B-A7C2-0503F092A957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{636A3AF9-42A2-4A2B-920D-AA5FCA0525EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636A3AF9-42A2-4A2B-920D-AA5FCA0525EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636A3AF9-42A2-4A2B-920D-AA5FCA0525EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636A3AF9-42A2-4A2B-920D-AA5FCA0525EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{534E12C4-6357-4478-9551-E6DA6D8A4EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{534E12C4-6357-4478-9551-E6DA6D8A4EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{534E12C4-6357-4478-9551-E6DA6D8A4EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{534E12C4-6357-4478-9551-E6DA6D8A4EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1355EAC5-FEFC-4196-BC77-A57890E79B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1355EAC5-FEFC-4196-BC77-A57890E79B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1355EAC5-FEFC-4196-BC77-A57890E79B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1355EAC5-FEFC-4196-BC77-A57890E79B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E49005-1956-4DF0-B0E0-F7232D7E8814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E49005-1956-4DF0-B0E0-F7232D7E8814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E49005-1956-4DF0-B0E0-F7232D7E8814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E49005-1956-4DF0-B0E0-F7232D7E8814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72FA19BA-983C-450A-A808-11EC0968CF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FA19BA-983C-450A-A808-11EC0968CF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FA19BA-983C-450A-A808-11EC0968CF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FA19BA-983C-450A-A808-11EC0968CF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ED727EC-8934-4DF8-ABB9-22265C86C7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED727EC-8934-4DF8-ABB9-22265C86C7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED727EC-8934-4DF8-ABB9-22265C86C7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED727EC-8934-4DF8-ABB9-22265C86C7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16A150F-CA14-44C0-B63E-E47D0F2ED709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16A150F-CA14-44C0-B63E-E47D0F2ED709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16A150F-CA14-44C0-B63E-E47D0F2ED709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16A150F-CA14-44C0-B63E-E47D0F2ED709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC28168E-2799-4181-A4F5-821210402A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC28168E-2799-4181-A4F5-821210402A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC28168E-2799-4181-A4F5-821210402A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC28168E-2799-4181-A4F5-821210402A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{708AE103-4311-4E8E-BF00-CC9C7DBADABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{708AE103-4311-4E8E-BF00-CC9C7DBADABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{708AE103-4311-4E8E-BF00-CC9C7DBADABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{708AE103-4311-4E8E-BF00-CC9C7DBADABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36466900-34E7-41B2-814C-F7C0326CA390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36466900-34E7-41B2-814C-F7C0326CA390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36466900-34E7-41B2-814C-F7C0326CA390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36466900-34E7-41B2-814C-F7C0326CA390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34EADB24-CA54-42DA-A0E1-C29D89A65727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34EADB24-CA54-42DA-A0E1-C29D89A65727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34EADB24-CA54-42DA-A0E1-C29D89A65727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34EADB24-CA54-42DA-A0E1-C29D89A65727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA8C322-8AE1-4445-831F-3D62B2DB28F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA8C322-8AE1-4445-831F-3D62B2DB28F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA8C322-8AE1-4445-831F-3D62B2DB28F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA8C322-8AE1-4445-831F-3D62B2DB28F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B29759-AF19-407A-9C74-F8021452642E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B29759-AF19-407A-9C74-F8021452642E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B29759-AF19-407A-9C74-F8021452642E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B29759-AF19-407A-9C74-F8021452642E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1503E039-9CA1-43FD-83D7-45098690046F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1503E039-9CA1-43FD-83D7-45098690046F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1503E039-9CA1-43FD-83D7-45098690046F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1503E039-9CA1-43FD-83D7-45098690046F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CD467B-E0BA-40C9-875F-D2756787CDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CD467B-E0BA-40C9-875F-D2756787CDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CD467B-E0BA-40C9-875F-D2756787CDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CD467B-E0BA-40C9-875F-D2756787CDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C100E84-8854-4A23-8684-A301CCBFD5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C100E84-8854-4A23-8684-A301CCBFD5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C100E84-8854-4A23-8684-A301CCBFD5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C100E84-8854-4A23-8684-A301CCBFD5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2344A9D8-9A93-4746-9343-7983F3C09765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2344A9D8-9A93-4746-9343-7983F3C09765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2344A9D8-9A93-4746-9343-7983F3C09765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2344A9D8-9A93-4746-9343-7983F3C09765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC458F2-0C36-4321-9241-F0DE43F96126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC458F2-0C36-4321-9241-F0DE43F96126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC458F2-0C36-4321-9241-F0DE43F96126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC458F2-0C36-4321-9241-F0DE43F96126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE38B07-AE50-43A6-9E8F-65E5B84FCAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE38B07-AE50-43A6-9E8F-65E5B84FCAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE38B07-AE50-43A6-9E8F-65E5B84FCAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE38B07-AE50-43A6-9E8F-65E5B84FCAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{365E3553-EF3A-4C86-9E9A-851B1EFD2A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{365E3553-EF3A-4C86-9E9A-851B1EFD2A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{365E3553-EF3A-4C86-9E9A-851B1EFD2A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{365E3553-EF3A-4C86-9E9A-851B1EFD2A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBF3ADA1-8E5E-4D51-B460-DF20EF4A209C} = {4AB435C0-CC4B-43E8-9F27-B6D7A15C9584}
+		{293E947E-F356-451B-AF27-D16CEF93091B} = {CBF3ADA1-8E5E-4D51-B460-DF20EF4A209C}
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624} = {CBF3ADA1-8E5E-4D51-B460-DF20EF4A209C}
+		{C0D5A349-61E8-4F7C-821A-47EE88659610} = {CBF3ADA1-8E5E-4D51-B460-DF20EF4A209C}
+		{0671F86C-B7C2-437D-98B7-6823AD87D60F} = {4AB435C0-CC4B-43E8-9F27-B6D7A15C9584}
+		{911BD64B-CA8D-4641-B95F-735C1D4C0C76} = {0671F86C-B7C2-437D-98B7-6823AD87D60F}
+		{04E7709A-7361-480B-A7C2-0503F092A957} = {0671F86C-B7C2-437D-98B7-6823AD87D60F}
+		{636A3AF9-42A2-4A2B-920D-AA5FCA0525EC} = {00FCDCC8-A64C-4664-ACF7-F92BC3A2060E}
+		{49557414-174F-4BE5-B99D-39FA75148FCD} = {00FCDCC8-A64C-4664-ACF7-F92BC3A2060E}
+		{534E12C4-6357-4478-9551-E6DA6D8A4EEB} = {435D03CC-565F-4FEB-950B-46303816F897}
+		{435D03CC-565F-4FEB-950B-46303816F897} = {49557414-174F-4BE5-B99D-39FA75148FCD}
+		{712843F8-26C7-413D-84F9-498AB6E80648} = {CBF3ADA1-8E5E-4D51-B460-DF20EF4A209C}
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD} = {0671F86C-B7C2-437D-98B7-6823AD87D60F}
+		{5144F01E-8742-44DC-8F47-17DA379B483F} = {49557414-174F-4BE5-B99D-39FA75148FCD}
+		{1355EAC5-FEFC-4196-BC77-A57890E79B2D} = {5144F01E-8742-44DC-8F47-17DA379B483F}
+		{A69CDB6F-82F6-4140-AB6B-B04B3057C2F3} = {49557414-174F-4BE5-B99D-39FA75148FCD}
+		{79E49005-1956-4DF0-B0E0-F7232D7E8814} = {A69CDB6F-82F6-4140-AB6B-B04B3057C2F3}
+		{6CB6F566-E7D5-4DCB-8CA0-176CF9A4B7C2} = {49557414-174F-4BE5-B99D-39FA75148FCD}
+		{72FA19BA-983C-450A-A808-11EC0968CF66} = {6CB6F566-E7D5-4DCB-8CA0-176CF9A4B7C2}
+		{1C891690-5FD1-447C-91CF-82E9697A6EC4} = {49557414-174F-4BE5-B99D-39FA75148FCD}
+		{6ED727EC-8934-4DF8-ABB9-22265C86C7FE} = {1C891690-5FD1-447C-91CF-82E9697A6EC4}
+		{F495D813-406F-479E-AEB8-52FE38D3BF2B} = {00FCDCC8-A64C-4664-ACF7-F92BC3A2060E}
+		{F16A150F-CA14-44C0-B63E-E47D0F2ED709} = {F495D813-406F-479E-AEB8-52FE38D3BF2B}
+		{D2794281-4412-4C13-B13C-8D710BB0BC8B} = {00FCDCC8-A64C-4664-ACF7-F92BC3A2060E}
+		{BC28168E-2799-4181-A4F5-821210402A86} = {F495D813-406F-479E-AEB8-52FE38D3BF2B}
+		{708AE103-4311-4E8E-BF00-CC9C7DBADABA} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{325F23E7-37F3-4E11-B4F7-798DB2FE9BD4} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{36466900-34E7-41B2-814C-F7C0326CA390} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{34EADB24-CA54-42DA-A0E1-C29D89A65727} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{BF52B1A0-D83E-4AED-8579-0F53E5BA0F49} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{ACA8C322-8AE1-4445-831F-3D62B2DB28F3} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{56B29759-AF19-407A-9C74-F8021452642E} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{1503E039-9CA1-43FD-83D7-45098690046F} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{17CD467B-E0BA-40C9-875F-D2756787CDC0} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{4C100E84-8854-4A23-8684-A301CCBFD5D6} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{F2FA98DE-DA30-441A-B6C3-FB2413692B01} = {00FCDCC8-A64C-4664-ACF7-F92BC3A2060E}
+		{2344A9D8-9A93-4746-9343-7983F3C09765} = {F2FA98DE-DA30-441A-B6C3-FB2413692B01}
+		{BFC458F2-0C36-4321-9241-F0DE43F96126} = {0671F86C-B7C2-437D-98B7-6823AD87D60F}
+		{7EE38B07-AE50-43A6-9E8F-65E5B84FCAA1} = {D2794281-4412-4C13-B13C-8D710BB0BC8B}
+		{91F4FCF6-5C4A-4C90-B5F8-5C950A09DFFC} = {49557414-174F-4BE5-B99D-39FA75148FCD}
+		{365E3553-EF3A-4C86-9E9A-851B1EFD2A7D} = {91F4FCF6-5C4A-4C90-B5F8-5C950A09DFFC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 32
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mingriland.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\TLAuto.Lib\\Main\\TLAuto.Base\\TLAuto.Base.csproj
+		SccProjectTopLevelParentUniqueName1 = TLAuto.Machine.Lib.sln
+		SccProjectName1 = ../TLAuto.Lib/Main/TLAuto.Base
+		SccLocalPath1 = ..\\TLAuto.Lib\\Main\\TLAuto.Base
+		SccProjectUniqueName2 = ..\\TLAuto.Lib\\Main\\TLAuto.BaseEx\\TLAuto.BaseEx.csproj
+		SccProjectTopLevelParentUniqueName2 = TLAuto.Machine.Lib.sln
+		SccProjectName2 = ../TLAuto.Lib/Main/TLAuto.BaseEx
+		SccLocalPath2 = ..\\TLAuto.Lib\\Main\\TLAuto.BaseEx
+		SccProjectUniqueName3 = ..\\TLAuto.Lib\\Main\\TLAuto.Log\\TLAuto.Log.csproj
+		SccProjectTopLevelParentUniqueName3 = TLAuto.Machine.Lib.sln
+		SccProjectName3 = ../TLAuto.Lib/Main/TLAuto.Log
+		SccLocalPath3 = ..\\TLAuto.Lib\\Main\\TLAuto.Log
+		SccProjectUniqueName4 = TLAuto.Machine.Controls\\TLAuto.Machine.Controls.csproj
+		SccProjectName4 = TLAuto.Machine.Controls
+		SccLocalPath4 = TLAuto.Machine.Controls
+		SccProjectUniqueName5 = TLAuto.Machine.App\\TLAuto.Machine.App.csproj
+		SccProjectName5 = TLAuto.Machine.App
+		SccLocalPath5 = TLAuto.Machine.App
+		SccProjectUniqueName6 = ..\\TLAuto.Notification\\TLAuto.Notification.Contracts\\TLAuto.Notification.Contracts.csproj
+		SccProjectTopLevelParentUniqueName6 = TLAuto.Machine.Lib.sln
+		SccProjectName6 = ../TLAuto.Notification/TLAuto.Notification.Contracts
+		SccLocalPath6 = ..\\TLAuto.Notification\\TLAuto.Notification.Contracts
+		SccProjectUniqueName7 = ..\\TLAuto.Music\\TLAuto.Music.Contracts\\TLAuto.Music.Contracts.csproj
+		SccProjectTopLevelParentUniqueName7 = TLAuto.Machine.Lib.sln
+		SccProjectName7 = ../TLAuto.Music/TLAuto.Music.Contracts
+		SccLocalPath7 = ..\\TLAuto.Music\\TLAuto.Music.Contracts
+		SccProjectUniqueName8 = TLAuto.Machine.Plugins.Core\\TLAuto.Machine.Plugins.Core.csproj
+		SccProjectTopLevelParentUniqueName8 = TLAuto.Machine.Lib.sln
+		SccProjectName8 = TLAuto.Machine.Plugins.Core
+		SccLocalPath8 = TLAuto.Machine.Plugins.Core
+		SccProjectUniqueName9 = TLAuto.Machine.Plugins.Boxing\\TLAuto.Machine.Plugins.Boxing.csproj
+		SccProjectTopLevelParentUniqueName9 = TLAuto.Machine.Lib.sln
+		SccProjectName9 = TLAuto.Machine.Plugins.Boxing
+		SccLocalPath9 = TLAuto.Machine.Plugins.Boxing
+		SccProjectUniqueName10 = ..\\TLAuto.Lib\\Main\\TLAuto.Wcf\\TLAuto.Wcf.csproj
+		SccProjectTopLevelParentUniqueName10 = TLAuto.Machine.Lib.sln
+		SccProjectName10 = ../TLAuto.Lib/Main/TLAuto.Wcf
+		SccLocalPath10 = ..\\TLAuto.Lib\\Main\\TLAuto.Wcf
+		SccProjectUniqueName11 = ..\\TLAuto.Device\\Dev\\TLAuto.Device.Contracts\\TLAuto.Device.Contracts.csproj
+		SccProjectTopLevelParentUniqueName11 = TLAuto.Machine.Lib.sln
+		SccProjectName11 = ../TLAuto.Device/Dev/TLAuto.Device.Contracts
+		SccLocalPath11 = ..\\TLAuto.Device\\Dev\\TLAuto.Device.Contracts
+		SccProjectUniqueName12 = TLAuto.Machine.Plugins.Sudoku\\TLAuto.Machine.Plugins.Sudoku.csproj
+		SccProjectTopLevelParentUniqueName12 = TLAuto.Machine.Lib.sln
+		SccProjectName12 = TLAuto.Machine.Plugins.Sudoku
+		SccLocalPath12 = TLAuto.Machine.Plugins.Sudoku
+		SccProjectUniqueName13 = TLAuto.Machine.Plugins.Cooking\\TLAuto.Machine.Plugins.Cooking.csproj
+		SccProjectTopLevelParentUniqueName13 = TLAuto.Machine.Lib.sln
+		SccProjectName13 = TLAuto.Machine.Plugins.Cooking
+		SccLocalPath13 = TLAuto.Machine.Plugins.Cooking
+		SccProjectUniqueName14 = TLAuto.Machine.Plugins.HitMouse\\TLAuto.Machine.Plugins.HitMouse.csproj
+		SccProjectTopLevelParentUniqueName14 = TLAuto.Machine.Lib.sln
+		SccProjectName14 = TLAuto.Machine.Plugins.HitMouse
+		SccLocalPath14 = TLAuto.Machine.Plugins.HitMouse
+		SccProjectUniqueName15 = TLAuto.Machine.Plugins.Touching\\TLAuto.Machine.Plugins.Touching.csproj
+		SccProjectTopLevelParentUniqueName15 = TLAuto.Machine.Lib.sln
+		SccProjectName15 = TLAuto.Machine.Plugins.Touching
+		SccLocalPath15 = TLAuto.Machine.Plugins.Touching
+		SccProjectUniqueName16 = TLAuto.Machine.Plugins.CheckPressButtons\\TLAuto.Machine.Plugins.CheckPressButtons.csproj
+		SccProjectTopLevelParentUniqueName16 = TLAuto.Machine.Lib.sln
+		SccProjectName16 = TLAuto.Machine.Plugins.CheckPressButtons
+		SccLocalPath16 = TLAuto.Machine.Plugins.CheckPressButtons
+		SccProjectUniqueName17 = TLAuto.Machine.Plugins.TestButtonNumber\\TLAuto.Machine.Plugins.TestButtonNumber.csproj
+		SccProjectTopLevelParentUniqueName17 = TLAuto.Machine.Lib.sln
+		SccProjectName17 = TLAuto.Machine.Plugins.TestButtonNumber
+		SccLocalPath17 = TLAuto.Machine.Plugins.TestButtonNumber
+		SccProjectUniqueName18 = TLAuto.Machine.Plugins.Crystals\\TLAuto.Machine.Plugins.Crystals.csproj
+		SccProjectTopLevelParentUniqueName18 = TLAuto.Machine.Lib.sln
+		SccProjectName18 = TLAuto.Machine.Plugins.Crystals
+		SccLocalPath18 = TLAuto.Machine.Plugins.Crystals
+		SccProjectUniqueName19 = TLAuto.Machine.Plugins.Argue\\TLAuto.Machine.Plugins.Argue.csproj
+		SccProjectTopLevelParentUniqueName19 = TLAuto.Machine.Lib.sln
+		SccProjectName19 = TLAuto.Machine.Plugins.Argue
+		SccLocalPath19 = TLAuto.Machine.Plugins.Argue
+		SccProjectUniqueName20 = TLAuto.Machine.Plugins.Battle\\TLAuto.Machine.Plugins.Battle.csproj
+		SccProjectTopLevelParentUniqueName20 = TLAuto.Machine.Lib.sln
+		SccProjectName20 = TLAuto.Machine.Plugins.Battle
+		SccLocalPath20 = TLAuto.Machine.Plugins.Battle
+		SccProjectUniqueName21 = TLAuto.Machine.Plugins.HitCheckTask\\TLAuto.Machine.Plugins.HitCheckTask.csproj
+		SccProjectTopLevelParentUniqueName21 = TLAuto.Machine.Lib.sln
+		SccProjectName21 = TLAuto.Machine.Plugins.HitCheckTask
+		SccLocalPath21 = TLAuto.Machine.Plugins.HitCheckTask
+		SccProjectUniqueName22 = TLAuto.Machine.Plugins.Maid\\TLAuto.Machine.Plugins.Maid.csproj
+		SccProjectTopLevelParentUniqueName22 = TLAuto.Machine.Lib.sln
+		SccProjectName22 = TLAuto.Machine.Plugins.Maid
+		SccLocalPath22 = TLAuto.Machine.Plugins.Maid
+		SccProjectUniqueName23 = TLAuto.Machine.Plugins.Guard\\TLAuto.Machine.Plugins.Guard.csproj
+		SccProjectTopLevelParentUniqueName23 = TLAuto.Machine.Lib.sln
+		SccProjectName23 = TLAuto.Machine.Plugins.Guard
+		SccLocalPath23 = TLAuto.Machine.Plugins.Guard
+		SccProjectUniqueName24 = TLAuto.Machine.Plugins.Runes\\TLAuto.Machine.Plugins.Runes.csproj
+		SccProjectTopLevelParentUniqueName24 = TLAuto.Machine.Lib.sln
+		SccProjectName24 = TLAuto.Machine.Plugins.Runes
+		SccLocalPath24 = TLAuto.Machine.Plugins.Runes
+		SccProjectUniqueName25 = TLAuto.Machine.Plugins.Knocking\\TLAuto.Machine.Plugins.Knocking.csproj
+		SccProjectTopLevelParentUniqueName25 = TLAuto.Machine.Lib.sln
+		SccProjectName25 = TLAuto.Machine.Plugins.Knocking
+		SccLocalPath25 = TLAuto.Machine.Plugins.Knocking
+		SccProjectUniqueName26 = TLAuto.Machine.Plugins.Eyes\\TLAuto.Machine.Plugins.Eyes.csproj
+		SccProjectTopLevelParentUniqueName26 = TLAuto.Machine.Lib.sln
+		SccProjectName26 = TLAuto.Machine.Plugins.Eyes
+		SccLocalPath26 = TLAuto.Machine.Plugins.Eyes
+		SccProjectUniqueName27 = TLAuto.Machine.Plugins.Arsh\\TLAuto.Machine.Plugins.Arsh.csproj
+		SccProjectTopLevelParentUniqueName27 = TLAuto.Machine.Lib.sln
+		SccProjectName27 = TLAuto.Machine.Plugins.Arsh
+		SccLocalPath27 = TLAuto.Machine.Plugins.Arsh
+		SccProjectUniqueName28 = TLAuto.Machine.Plugins.Help\\TLAuto.Machine.Plugins.Help.csproj
+		SccProjectTopLevelParentUniqueName28 = TLAuto.Machine.Lib.sln
+		SccProjectName28 = TLAuto.Machine.Plugins.Help
+		SccLocalPath28 = TLAuto.Machine.Plugins.Help
+		SccProjectUniqueName29 = ..\\TLAuto.Video\\TLAuto.Video.Contracts\\TLAuto.Video.Contracts.csproj
+		SccProjectTopLevelParentUniqueName29 = TLAuto.Machine.Lib.sln
+		SccProjectName29 = ../TLAuto.Video/TLAuto.Video.Contracts
+		SccLocalPath29 = ..\\TLAuto.Video\\TLAuto.Video.Contracts
+		SccProjectUniqueName30 = TLAuto.Machine.Plugins.Listen\\TLAuto.Machine.Plugins.Listen.csproj
+		SccProjectTopLevelParentUniqueName30 = TLAuto.Machine.Lib.sln
+		SccProjectName30 = TLAuto.Machine.Plugins.Listen
+		SccLocalPath30 = TLAuto.Machine.Plugins.Listen
+		SccProjectUniqueName31 = TLAuto.Machine.Plugins.Candle\\TLAuto.Machine.Plugins.Candle.csproj
+		SccProjectTopLevelParentUniqueName31 = TLAuto.Machine.Lib.sln
+		SccProjectName31 = TLAuto.Machine.Plugins.Candle
+		SccLocalPath31 = TLAuto.Machine.Plugins.Candle
+	EndGlobalSection
+EndGlobal

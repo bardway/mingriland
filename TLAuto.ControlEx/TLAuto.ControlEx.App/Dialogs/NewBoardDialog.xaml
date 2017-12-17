@@ -1,0 +1,40 @@
+﻿<Window x:Class="TLAuto.ControlEx.App.Dialogs.NewBoardDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:TLAuto.ControlEx.App.Models"
+        Title="新建工业版" Height="200" Width="320" Style="{StaticResource WindowIconStyleForDialog}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="工业版名称：" VerticalAlignment="Center" Margin="10,0,0,0" />
+        <TextBox x:Name="TxtBoardName" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="工业版设备号：" Margin="10,0,0,0" VerticalAlignment="Center" />
+        <TextBox x:Name="TxtDeviceNumber" MaxLength="3" Text="1" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <TextBlock Grid.Row="2" Grid.Column="0" x:Name="TblItemCountTitle" Text="工业版数量：" VerticalAlignment="Center" Margin="10,0,0,0" />
+        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="CboItemCount" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,0,0,0" Text="通讯地址：" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="CboServices" Margin="0,0,10,0" VerticalAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate DataType="models:ServiceAddressInfo">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Mark}" />
+                        <TextBlock Text="{Binding ServiceAddress, StringFormat=({0})}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="别名：" VerticalAlignment="Center" Margin="10,0,0,0" />
+        <TextBox x:Name="TxtSignName" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <Button Grid.Row="5" Grid.Column="1" Width="70" Content="Ok" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Click="OkButton_Click" IsDefault="True" />
+    </Grid>
+</Window>

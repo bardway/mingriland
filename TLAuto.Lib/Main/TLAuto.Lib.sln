@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Base", "TLAuto.Base\TLAuto.Base.csproj", "{293E947E-F356-451B-AF27-D16CEF93091B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.BaseEx", "TLAuto.BaseEx\TLAuto.BaseEx.csproj", "{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Log", "TLAuto.Log\TLAuto.Log.csproj", "{C0D5A349-61E8-4F7C-821A-47EE88659610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Themes", "TLAuto.Themes\TLAuto.Themes.csproj", "{D73BCE53-9DC1-4575-AC31-EDE8654A2A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Themes.Black", "TLAuto.Themes.Black\TLAuto.Themes.Black.csproj", "{4E798AE2-4EB5-4C1C-BEF6-23702250EC60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Themes.Default", "TLAuto.Themes.Default\TLAuto.Themes.Default.csproj", "{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Wcf", "TLAuto.Wcf\TLAuto.Wcf.csproj", "{712843F8-26C7-413D-84F9-498AB6E80648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAtuo.Mef.Aop", "TLAtuo.Mef.Aop\TLAtuo.Mef.Aop.csproj", "{C80AAD4C-C67A-4DB4-9A4C-CF1E57F3EF7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73BCE53-9DC1-4575-AC31-EDE8654A2A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73BCE53-9DC1-4575-AC31-EDE8654A2A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73BCE53-9DC1-4575-AC31-EDE8654A2A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73BCE53-9DC1-4575-AC31-EDE8654A2A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E798AE2-4EB5-4C1C-BEF6-23702250EC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E798AE2-4EB5-4C1C-BEF6-23702250EC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E798AE2-4EB5-4C1C-BEF6-23702250EC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E798AE2-4EB5-4C1C-BEF6-23702250EC60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80AAD4C-C67A-4DB4-9A4C-CF1E57F3EF7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80AAD4C-C67A-4DB4-9A4C-CF1E57F3EF7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80AAD4C-C67A-4DB4-9A4C-CF1E57F3EF7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80AAD4C-C67A-4DB4-9A4C-CF1E57F3EF7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mingriland.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TLAuto.Base\\TLAuto.Base.csproj
+		SccProjectName1 = TLAuto.Base
+		SccLocalPath1 = TLAuto.Base
+		SccProjectUniqueName2 = TLAuto.BaseEx\\TLAuto.BaseEx.csproj
+		SccProjectName2 = TLAuto.BaseEx
+		SccLocalPath2 = TLAuto.BaseEx
+		SccProjectUniqueName3 = TLAuto.Log\\TLAuto.Log.csproj
+		SccProjectName3 = TLAuto.Log
+		SccLocalPath3 = TLAuto.Log
+		SccProjectUniqueName4 = TLAuto.Themes\\TLAuto.Themes.csproj
+		SccProjectName4 = TLAuto.Themes
+		SccLocalPath4 = TLAuto.Themes
+		SccProjectUniqueName5 = TLAuto.Themes.Black\\TLAuto.Themes.Black.csproj
+		SccProjectName5 = TLAuto.Themes.Black
+		SccLocalPath5 = TLAuto.Themes.Black
+		SccProjectUniqueName6 = TLAuto.Themes.Default\\TLAuto.Themes.Default.csproj
+		SccProjectName6 = TLAuto.Themes.Default
+		SccLocalPath6 = TLAuto.Themes.Default
+		SccProjectUniqueName7 = TLAuto.Wcf\\TLAuto.Wcf.csproj
+		SccProjectName7 = TLAuto.Wcf
+		SccLocalPath7 = TLAuto.Wcf
+		SccProjectUniqueName8 = TLAtuo.Mef.Aop\\TLAtuo.Mef.Aop.csproj
+		SccProjectName8 = TLAtuo.Mef.Aop
+		SccLocalPath8 = TLAtuo.Mef.Aop
+	EndGlobalSection
+EndGlobal

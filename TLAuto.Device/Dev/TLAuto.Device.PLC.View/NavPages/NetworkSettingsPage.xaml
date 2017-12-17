@@ -1,0 +1,25 @@
+﻿<Page x:Class="TLAuto.Device.PLC.View.NavPages.NetworkSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="NetworkSettingsPage" KeepAlive="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="通信类型：" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <ComboBox x:Name="CboTypes" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" SelectedValuePath="Tag" SelectionChanged="CboTypes_SelectionChanged">
+            <ComboBoxItem Content="串口" IsSelected="True" Tag="0" />
+            <ComboBoxItem Content="TCP/IP" Tag="1" />
+        </ComboBox>
+        <ContentControl x:Name="NetworkContent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+    </Grid>
+</Page>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="TLAuto.Music.ServerHost.Dialog.EditMusicVolumeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="音量大小信息" MinHeight="120" SizeToContent="Height" Width="320" Style="{StaticResource WindowIconStyleForDialog}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="TblMarkTitle" Text="标识符：" VerticalAlignment="Center" Margin="10,5,0,0" />
+        <ComboBox x:Name="CboMarks" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,5,10,0" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="音量大小：" VerticalAlignment="Center" Margin="10,0,0,0" />
+        <Slider Grid.Row="1" x:Name="SliderVolume" Grid.Column="1" Minimum="0" Maximum="1" Value="0.5" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="1" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <Button Grid.Row="2" Grid.Column="1" Width="70" Content="Ok" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Click="OkButton_Click" IsDefault="True" />
+    </Grid>
+</Window>

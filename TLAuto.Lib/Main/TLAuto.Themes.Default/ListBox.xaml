@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="ListBox.Statis.Background" Color="#2D2D2D" />
+
+    <Style x:Key="ListBoxStyleBase" TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}">
+        <Setter Property="Background" Value="{StaticResource ListBox.Statis.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Border.Statis.Background}" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:TLAuto.ControlEx.App.Converter"
+                    xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                    xmlns:board="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes.Board">
+    <converter:BoardItemStatusToDescriptionConverter x:Key="BoardItemStatusToDescriptionConvert" />
+    <converters:ClassDescriptionConverter x:Key="ClassDescriptionConvert" />
+
+    <DataTemplate x:Key="BoardControllerExcuteDataTemplate" DataType="board:BoardControllerExcute">
+        <GroupBox Header="{Binding}" Margin="5">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                        <Button Content="+" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding AddBoardItemExcuteCommand}" />
+                        <Button Content="-" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding RemoveBoardItemExcuteCommand}" />
+                        <Button Content="↑" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding UpBoardItemExcuteCommand}" />
+                        <Button Content="↓" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding DownBoardItemExcuteCommand}" />
+                    </StackPanel>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <ItemsControl ItemsSource="{Binding BoardItemInfos}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="board:RelayBoardItemInfo">
+                        <Border BorderBrush="Gray" BorderThickness="2" Padding="5" Margin="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" />
+                                    <Button Width="70" Content="Edit" Margin="5,0,0,0" VerticalAlignment="Center" Command="{Binding EditCommand}" />
+                                </StackPanel>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="设备号：" Margin="5" />
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding DeviceNumber}" Margin="5" />
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="开关号：" Margin="5" />
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Number}" Margin="5" />
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="状态：" Margin="5" />
+                                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding IsNo, Converter={StaticResource BoardItemStatusToDescriptionConvert}}" Margin="5" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </DataTemplate>
+
+</ResourceDictionary>

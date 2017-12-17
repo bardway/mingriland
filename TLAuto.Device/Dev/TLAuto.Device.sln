@@ -1,0 +1,251 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.ServerHost", "TLAuto.Device.ServerHost\TLAuto.Device.ServerHost.csproj", "{A130E009-1B31-4779-9469-BDA799DB15DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA96B101-31CC-4457-A2EE-35F591DDD23F} = {DA96B101-31CC-4457-A2EE-35F591DDD23F}
+		{6DD03025-7AEA-4BE4-8879-2481BD0D1742} = {6DD03025-7AEA-4BE4-8879-2481BD0D1742}
+		{F756B839-AB95-4C3B-B33A-CF6AE6C91380} = {F756B839-AB95-4C3B-B33A-CF6AE6C91380}
+		{92951A41-4337-4264-9A37-D8525F4E30B6} = {92951A41-4337-4264-9A37-D8525F4E30B6}
+		{98105A42-7741-4F10-A316-E4E2F549DD2F} = {98105A42-7741-4F10-A316-E4E2F549DD2F}
+		{0486BB43-7769-4F12-B631-B3775FA41167} = {0486BB43-7769-4F12-B631-B3775FA41167}
+		{FD871364-0610-444A-900C-8D517FB6104D} = {FD871364-0610-444A-900C-8D517FB6104D}
+		{7BA349AC-E2D6-4AC1-9202-3BD8CC71350D} = {7BA349AC-E2D6-4AC1-9202-3BD8CC71350D}
+		{4671DDC2-9FA3-4859-8C1C-4B6645989048} = {4671DDC2-9FA3-4859-8C1C-4B6645989048}
+		{D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8} = {D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8}
+		{0981D4EE-B0DA-46D8-8558-8A1E1876C919} = {0981D4EE-B0DA-46D8-8558-8A1E1876C919}
+		{DA212AF1-19D2-4C3B-9A46-4BC71AAE3495} = {DA212AF1-19D2-4C3B-9A46-4BC71AAE3495}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{0ED6803D-A2A3-428C-B0E8-CE1AB2D9C918}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TLAuto.Lib", "TLAuto.Lib", "{DFC524AC-F03B-4F65-97E1-594E2D1796C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device", "TLAuto.Device\TLAuto.Device.csproj", "{B5187522-6088-4B45-A009-44D34CED1ADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Contracts", "TLAuto.Device.Contracts\TLAuto.Device.Contracts.csproj", "{6831F87E-16F9-4DA9-A51F-667446F94BDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Projector", "TLAuto.Device.Projector\TLAuto.Device.Projector.csproj", "{FD871364-0610-444A-900C-8D517FB6104D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.PLC", "TLAuto.Device.PLC\TLAuto.Device.PLC.csproj", "{0981D4EE-B0DA-46D8-8558-8A1E1876C919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Extension.Core", "TLAuto.Device.Extension.Core\TLAuto.Device.Extension.Core.csproj", "{66E748B1-354B-4B93-B21B-8CBE343431D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Projector.View", "TLAuto.Device.Projector.View\TLAuto.Device.Projector.View.csproj", "{6DD03025-7AEA-4BE4-8879-2481BD0D1742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Projector.ServiceData", "TLAuto.Device.Projector.ServiceData\TLAuto.Device.Projector.ServiceData.csproj", "{F756B839-AB95-4C3B-B33A-CF6AE6C91380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.PLC.View", "TLAuto.Device.PLC.View\TLAuto.Device.PLC.View.csproj", "{DA96B101-31CC-4457-A2EE-35F591DDD23F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.PLC.ServiceData", "TLAuto.Device.PLC.ServiceData\TLAuto.Device.PLC.ServiceData.csproj", "{4671DDC2-9FA3-4859-8C1C-4B6645989048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.DMX.View", "TLAuto.Device.DMX.View\TLAuto.Device.DMX.View.csproj", "{7BA349AC-E2D6-4AC1-9202-3BD8CC71350D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.DMX", "TLAuto.Device.DMX\TLAuto.Device.DMX.csproj", "{92951A41-4337-4264-9A37-D8525F4E30B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.DMX.ServiceData", "TLAuto.Device.DMX.ServiceData\TLAuto.Device.DMX.ServiceData.csproj", "{0486BB43-7769-4F12-B631-B3775FA41167}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.Controls", "TLAuto.Device.Controls\TLAuto.Device.Controls.csproj", "{77A6AFE8-49D2-4B3B-BD01-E56D288FB3B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.IoT.ServiceData", "TLAuto.Device.IoT.ServiceData\TLAuto.Device.IoT.ServiceData.csproj", "{D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.IoT", "TLAuto.Device.IoT\TLAuto.Device.IoT.csproj", "{98105A42-7741-4F10-A316-E4E2F549DD2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Device.IoT.View", "TLAuto.Device.IoT.View\TLAuto.Device.IoT.View.csproj", "{DA212AF1-19D2-4C3B-9A46-4BC71AAE3495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Base", "..\..\TLAuto.Lib\Main\TLAuto.Base\TLAuto.Base.csproj", "{293E947E-F356-451B-AF27-D16CEF93091B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.BaseEx", "..\..\TLAuto.Lib\Main\TLAuto.BaseEx\TLAuto.BaseEx.csproj", "{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Log", "..\..\TLAuto.Lib\Main\TLAuto.Log\TLAuto.Log.csproj", "{C0D5A349-61E8-4F7C-821A-47EE88659610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Themes.Default", "..\..\TLAuto.Lib\Main\TLAuto.Themes.Default\TLAuto.Themes.Default.csproj", "{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAuto.Wcf", "..\..\TLAuto.Lib\Main\TLAuto.Wcf\TLAuto.Wcf.csproj", "{712843F8-26C7-413D-84F9-498AB6E80648}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A130E009-1B31-4779-9469-BDA799DB15DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A130E009-1B31-4779-9469-BDA799DB15DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A130E009-1B31-4779-9469-BDA799DB15DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A130E009-1B31-4779-9469-BDA799DB15DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5187522-6088-4B45-A009-44D34CED1ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5187522-6088-4B45-A009-44D34CED1ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5187522-6088-4B45-A009-44D34CED1ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5187522-6088-4B45-A009-44D34CED1ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6831F87E-16F9-4DA9-A51F-667446F94BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD871364-0610-444A-900C-8D517FB6104D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD871364-0610-444A-900C-8D517FB6104D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD871364-0610-444A-900C-8D517FB6104D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD871364-0610-444A-900C-8D517FB6104D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0981D4EE-B0DA-46D8-8558-8A1E1876C919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0981D4EE-B0DA-46D8-8558-8A1E1876C919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0981D4EE-B0DA-46D8-8558-8A1E1876C919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0981D4EE-B0DA-46D8-8558-8A1E1876C919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E748B1-354B-4B93-B21B-8CBE343431D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E748B1-354B-4B93-B21B-8CBE343431D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E748B1-354B-4B93-B21B-8CBE343431D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E748B1-354B-4B93-B21B-8CBE343431D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD03025-7AEA-4BE4-8879-2481BD0D1742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD03025-7AEA-4BE4-8879-2481BD0D1742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD03025-7AEA-4BE4-8879-2481BD0D1742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD03025-7AEA-4BE4-8879-2481BD0D1742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F756B839-AB95-4C3B-B33A-CF6AE6C91380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F756B839-AB95-4C3B-B33A-CF6AE6C91380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F756B839-AB95-4C3B-B33A-CF6AE6C91380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F756B839-AB95-4C3B-B33A-CF6AE6C91380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA96B101-31CC-4457-A2EE-35F591DDD23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA96B101-31CC-4457-A2EE-35F591DDD23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA96B101-31CC-4457-A2EE-35F591DDD23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA96B101-31CC-4457-A2EE-35F591DDD23F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4671DDC2-9FA3-4859-8C1C-4B6645989048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4671DDC2-9FA3-4859-8C1C-4B6645989048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4671DDC2-9FA3-4859-8C1C-4B6645989048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4671DDC2-9FA3-4859-8C1C-4B6645989048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA349AC-E2D6-4AC1-9202-3BD8CC71350D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA349AC-E2D6-4AC1-9202-3BD8CC71350D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA349AC-E2D6-4AC1-9202-3BD8CC71350D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA349AC-E2D6-4AC1-9202-3BD8CC71350D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92951A41-4337-4264-9A37-D8525F4E30B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92951A41-4337-4264-9A37-D8525F4E30B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92951A41-4337-4264-9A37-D8525F4E30B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92951A41-4337-4264-9A37-D8525F4E30B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0486BB43-7769-4F12-B631-B3775FA41167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0486BB43-7769-4F12-B631-B3775FA41167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0486BB43-7769-4F12-B631-B3775FA41167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0486BB43-7769-4F12-B631-B3775FA41167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A6AFE8-49D2-4B3B-BD01-E56D288FB3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A6AFE8-49D2-4B3B-BD01-E56D288FB3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A6AFE8-49D2-4B3B-BD01-E56D288FB3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A6AFE8-49D2-4B3B-BD01-E56D288FB3B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F8C1E2-28CF-4E21-B627-32F3CB29A4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98105A42-7741-4F10-A316-E4E2F549DD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98105A42-7741-4F10-A316-E4E2F549DD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98105A42-7741-4F10-A316-E4E2F549DD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98105A42-7741-4F10-A316-E4E2F549DD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA212AF1-19D2-4C3B-9A46-4BC71AAE3495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA212AF1-19D2-4C3B-9A46-4BC71AAE3495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA212AF1-19D2-4C3B-9A46-4BC71AAE3495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA212AF1-19D2-4C3B-9A46-4BC71AAE3495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293E947E-F356-451B-AF27-D16CEF93091B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D5A349-61E8-4F7C-821A-47EE88659610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712843F8-26C7-413D-84F9-498AB6E80648}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFC524AC-F03B-4F65-97E1-594E2D1796C3} = {0ED6803D-A2A3-428C-B0E8-CE1AB2D9C918}
+		{293E947E-F356-451B-AF27-D16CEF93091B} = {DFC524AC-F03B-4F65-97E1-594E2D1796C3}
+		{8AD58CEB-DFFD-4995-B6E0-710E5BC45624} = {DFC524AC-F03B-4F65-97E1-594E2D1796C3}
+		{C0D5A349-61E8-4F7C-821A-47EE88659610} = {DFC524AC-F03B-4F65-97E1-594E2D1796C3}
+		{0C29D601-22DD-42DD-9C13-15F6D4FDCDBB} = {DFC524AC-F03B-4F65-97E1-594E2D1796C3}
+		{712843F8-26C7-413D-84F9-498AB6E80648} = {DFC524AC-F03B-4F65-97E1-594E2D1796C3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 23
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mingriland.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TLAuto.Device.ServerHost\\TLAuto.Device.ServerHost.csproj
+		SccProjectName1 = TLAuto.Device.ServerHost
+		SccLocalPath1 = TLAuto.Device.ServerHost
+		SccProjectUniqueName2 = TLAuto.Device\\TLAuto.Device.csproj
+		SccProjectName2 = TLAuto.Device
+		SccLocalPath2 = TLAuto.Device
+		SccProjectUniqueName3 = TLAuto.Device.Contracts\\TLAuto.Device.Contracts.csproj
+		SccProjectName3 = TLAuto.Device.Contracts
+		SccLocalPath3 = TLAuto.Device.Contracts
+		SccProjectUniqueName4 = TLAuto.Device.Projector\\TLAuto.Device.Projector.csproj
+		SccProjectName4 = TLAuto.Device.Projector
+		SccLocalPath4 = TLAuto.Device.Projector
+		SccProjectUniqueName5 = TLAuto.Device.PLC\\TLAuto.Device.PLC.csproj
+		SccProjectName5 = TLAuto.Device.PLC
+		SccLocalPath5 = TLAuto.Device.PLC
+		SccProjectUniqueName6 = TLAuto.Device.Extension.Core\\TLAuto.Device.Extension.Core.csproj
+		SccProjectName6 = TLAuto.Device.Extension.Core
+		SccLocalPath6 = TLAuto.Device.Extension.Core
+		SccProjectUniqueName7 = TLAuto.Device.Projector.View\\TLAuto.Device.Projector.View.csproj
+		SccProjectName7 = TLAuto.Device.Projector.View
+		SccLocalPath7 = TLAuto.Device.Projector.View
+		SccProjectUniqueName8 = TLAuto.Device.Projector.ServiceData\\TLAuto.Device.Projector.ServiceData.csproj
+		SccProjectName8 = TLAuto.Device.Projector.ServiceData
+		SccLocalPath8 = TLAuto.Device.Projector.ServiceData
+		SccProjectUniqueName9 = TLAuto.Device.PLC.View\\TLAuto.Device.PLC.View.csproj
+		SccProjectName9 = TLAuto.Device.PLC.View
+		SccLocalPath9 = TLAuto.Device.PLC.View
+		SccProjectUniqueName10 = TLAuto.Device.PLC.ServiceData\\TLAuto.Device.PLC.ServiceData.csproj
+		SccProjectName10 = TLAuto.Device.PLC.ServiceData
+		SccLocalPath10 = TLAuto.Device.PLC.ServiceData
+		SccProjectUniqueName11 = TLAuto.Device.DMX.View\\TLAuto.Device.DMX.View.csproj
+		SccProjectName11 = TLAuto.Device.DMX.View
+		SccLocalPath11 = TLAuto.Device.DMX.View
+		SccProjectUniqueName12 = TLAuto.Device.DMX\\TLAuto.Device.DMX.csproj
+		SccProjectName12 = TLAuto.Device.DMX
+		SccLocalPath12 = TLAuto.Device.DMX
+		SccProjectUniqueName13 = TLAuto.Device.DMX.ServiceData\\TLAuto.Device.DMX.ServiceData.csproj
+		SccProjectName13 = TLAuto.Device.DMX.ServiceData
+		SccLocalPath13 = TLAuto.Device.DMX.ServiceData
+		SccProjectUniqueName14 = TLAuto.Device.Controls\\TLAuto.Device.Controls.csproj
+		SccProjectName14 = TLAuto.Device.Controls
+		SccLocalPath14 = TLAuto.Device.Controls
+		SccProjectUniqueName15 = TLAuto.Device.IoT.ServiceData\\TLAuto.Device.IoT.ServiceData.csproj
+		SccProjectName15 = TLAuto.Device.IoT.ServiceData
+		SccLocalPath15 = TLAuto.Device.IoT.ServiceData
+		SccProjectUniqueName16 = TLAuto.Device.IoT\\TLAuto.Device.IoT.csproj
+		SccProjectName16 = TLAuto.Device.IoT
+		SccLocalPath16 = TLAuto.Device.IoT
+		SccProjectUniqueName17 = TLAuto.Device.IoT.View\\TLAuto.Device.IoT.View.csproj
+		SccProjectName17 = TLAuto.Device.IoT.View
+		SccLocalPath17 = TLAuto.Device.IoT.View
+		SccProjectUniqueName18 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Base\\TLAuto.Base.csproj
+		SccProjectTopLevelParentUniqueName18 = TLAuto.Device.sln
+		SccProjectName18 = ../../TLAuto.Lib/Main/TLAuto.Base
+		SccLocalPath18 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Base
+		SccProjectUniqueName19 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.BaseEx\\TLAuto.BaseEx.csproj
+		SccProjectTopLevelParentUniqueName19 = TLAuto.Device.sln
+		SccProjectName19 = ../../TLAuto.Lib/Main/TLAuto.BaseEx
+		SccLocalPath19 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.BaseEx
+		SccProjectUniqueName20 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Log\\TLAuto.Log.csproj
+		SccProjectTopLevelParentUniqueName20 = TLAuto.Device.sln
+		SccProjectName20 = ../../TLAuto.Lib/Main/TLAuto.Log
+		SccLocalPath20 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Log
+		SccProjectUniqueName21 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Themes.Default\\TLAuto.Themes.Default.csproj
+		SccProjectTopLevelParentUniqueName21 = TLAuto.Device.sln
+		SccProjectName21 = ../../TLAuto.Lib/Main/TLAuto.Themes.Default
+		SccLocalPath21 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Themes.Default
+		SccProjectUniqueName22 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Wcf\\TLAuto.Wcf.csproj
+		SccProjectTopLevelParentUniqueName22 = TLAuto.Device.sln
+		SccProjectName22 = ../../TLAuto.Lib/Main/TLAuto.Wcf
+		SccLocalPath22 = ..\\..\\TLAuto.Lib\\Main\\TLAuto.Wcf
+	EndGlobalSection
+EndGlobal

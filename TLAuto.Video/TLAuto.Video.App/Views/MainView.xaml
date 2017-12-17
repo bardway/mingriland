@@ -1,0 +1,25 @@
+﻿<Window x:Class="TLAuto.Video.App.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:command="http://www.galasoft.ch/mvvmlight"
+        xmlns:controls="clr-namespace:TLAuto.Video.Controls;assembly=TLAuto.Video.Controls"
+        xmlns:attachedPropertys="clr-namespace:TLAuto.Video.Controls.AttachedPropertys;assembly=TLAuto.Video.Controls"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="350" Width="525" Background="Black" WindowStartupLocation="CenterScreen"
+        DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
+        attachedPropertys:WindowForFullScreenAttachedProperty.VideoWindowType="{Binding VideoWindowType}">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewKeyDown">
+            <command:EventToCommand Command="{Binding PreviewKeyDownCommand}" PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Loaded">
+            <command:EventToCommand Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <controls:VideoControl x:Name="Vc" Source="{Binding Source}" Volume="{Binding Volume}" IsRepeat="{Binding IsRepeat}" />
+    </Grid>
+</Window>

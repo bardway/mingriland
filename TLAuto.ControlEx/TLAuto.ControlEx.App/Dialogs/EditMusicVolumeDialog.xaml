@@ -1,0 +1,34 @@
+﻿<Window x:Class="TLAuto.ControlEx.App.Dialogs.EditMusicVolumeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+        mc:Ignorable="d"
+        Title="编辑音量大小" Height="130" Width="300" Style="{StaticResource WindowIconStyleForDialog}">
+    <Window.Resources>
+        <converters:EnumDescriptionConverter x:Key="EnumDescriptionConvert" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="音乐执行器类型：" Margin="10,0,0,0" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="CboMusicExcutes" VerticalAlignment="Center" Margin="0,0,10,0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConvert}}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="音量大小：" Margin="10,0,0,0" VerticalAlignment="Center" />
+        <Slider x:Name="SliderControl" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Maximum="1" Minimum="0" Value="0.5" Margin="0,0,10,0" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="1" />
+        <Button Grid.Row="2" Grid.Column="1" Width="70" Content="Ok" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Click="OkButton_Click" IsDefault="True" />
+    </Grid>
+</Window>

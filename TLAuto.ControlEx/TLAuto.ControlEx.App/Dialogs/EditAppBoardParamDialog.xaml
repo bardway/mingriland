@@ -1,0 +1,57 @@
+﻿<Window x:Class="TLAuto.ControlEx.App.Dialogs.EditAppBoardParamDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:notification="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes.Notification"
+        Title="编辑工业版参数信息" Height="600" Width="820" Style="{StaticResource WindowIconStyleForDialog}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Button Content="+" Width="18" Height="18" Margin="5,0,0,0" Click="AddBoardItem_Click" />
+            <Button Content="-" Width="18" Height="18" Margin="5,0,0,0" Click="RemoveBoardItem_Click" />
+            <Button Content="↑" Width="18" Height="18" Margin="5,0,0,0" Click="UpBoardItem_Click" />
+            <Button Content="↓" Width="18" Height="18" Margin="5,0,0,0" Click="DownBoardItem_Click" />
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <ItemsControl x:Name="LstBoardPramInfos">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" ItemWidth="195" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="notification:BoardParamInfo">
+                        <Border BorderBrush="Gray" BorderThickness="2" Padding="5" Margin="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" />
+                                    <Button Width="70" Content="Edit" Margin="5,0,0,0" VerticalAlignment="Center" Command="{Binding EditCommand}" />
+                                </StackPanel>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="设备号：" Margin="5" VerticalAlignment="Center" />
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding DeviceNumber}" Margin="5" VerticalAlignment="Center" />
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="开关号：" Margin="5" VerticalAlignment="Center" />
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Number}" Margin="5" VerticalAlignment="Center" />
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="通讯地址：" Margin="5" VerticalAlignment="Center" />
+                                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding ServiceAddressMark}" TextTrimming="CharacterEllipsis" ToolTip="{Binding ServiceAddressMark}" VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <Button Grid.Row="2" Width="70" Content="OK" HorizontalAlignment="Right" VerticalAlignment="Center" Click="OkButton_Click" IsDefault="True" Margin="10" />
+    </Grid>
+</Window>

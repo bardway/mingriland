@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F2F6352-849D-467C-8EBD-E3B0BFEEF2CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TLAuto.ControlEx.App</RootNamespace>
+    <AssemblyName>TLAuto.ControlEx.App</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resource\Image\control.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TLAuto.Device.DMX.ServiceData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Projects\mingriland\TLAuto.Device\Dev\DllPackage\TLAuto.Device.DMX.ServiceData.dll</HintPath>
+    </Reference>
+    <Reference Include="TLAuto.Device.IoT.ServiceData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Projects\mingriland\TLAuto.Device\Dev\DllPackage\TLAuto.Device.IoT.ServiceData.dll</HintPath>
+    </Reference>
+    <Reference Include="TLAuto.Device.PLC.ServiceData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Projects\mingriland\TLAuto.Device\Dev\DllPackage\TLAuto.Device.PLC.ServiceData.dll</HintPath>
+    </Reference>
+    <Reference Include="TLAuto.Device.Projector.ServiceData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Projects\mingriland\TLAuto.Device\Dev\DllPackage\TLAuto.Device.Projector.ServiceData.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Behaviors\MouseRightButtonSelectedMenuForTreeBehavior.cs" />
+    <Compile Include="Behaviors\TextBoxGetFocusBehavior.cs" />
+    <Compile Include="Behaviors\TreeItemDragDropBehavior.cs" />
+    <Compile Include="Common\ConfigHelper.cs" />
+    <Compile Include="Common\ProjectHelper.cs" />
+    <Compile Include="Common\TreeItemHelper.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\EditTextControl.xaml.cs">
+      <DependentUpon>EditTextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditTextControlEx.xaml.cs">
+      <DependentUpon>EditTextControlEx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Models\Events\EditTextChangedRoutedEventArgs.cs" />
+    <Compile Include="Converter\AddItemToListConverter.cs" />
+    <Compile Include="Converter\BoardItemStatusToDescriptionConverter.cs" />
+    <Compile Include="Converter\CIDToDescriptionConverter.cs" />
+    <Compile Include="Dialogs\AddWorkFlewDialog.xaml.cs">
+      <DependentUpon>AddWorkFlewDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditAppBoardParamDialog.xaml.cs">
+      <DependentUpon>EditAppBoardParamDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditAppMusicParamDialog.xaml.cs">
+      <DependentUpon>EditAppMusicParamDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditBoardDialog.xaml.cs">
+      <DependentUpon>EditBoardDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditMarkServiceAddressDialog.xaml.cs">
+      <DependentUpon>EditMarkServiceAddressDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditMusicVolumeDialog.xaml.cs">
+      <DependentUpon>EditMusicVolumeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditServiceAddressDialog.xaml.cs">
+      <DependentUpon>EditServiceAddressDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditServiceAddressListDialog.xaml.cs">
+      <DependentUpon>EditServiceAddressListDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Models\DialogBoard.cs" />
+    <Compile Include="Dialogs\Models\DialogBoardItem.cs" />
+    <Compile Include="Dialogs\NewBoardDialog.xaml.cs">
+      <DependentUpon>NewBoardDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewControllerExcuteDialog.xaml.cs">
+      <DependentUpon>NewControllerExcuteDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewMusicControllerExcuteDialog.xaml.cs">
+      <DependentUpon>NewMusicControllerExcuteDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.xaml.cs">
+      <DependentUpon>NewProjectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectBoardItemDialog.xaml.cs">
+      <DependentUpon>SelectBoardItemDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectMarkServiceAddressDialog.xaml.cs">
+      <DependentUpon>SelectMarkServiceAddressDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoardGroupXmlInfo.cs" />
+    <Compile Include="Models\BoardItemXmlInfo.cs" />
+    <Compile Include="Models\BoardXmlInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\Board\BoardControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Board\BoardItemInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\Board\RelayBoardControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Board\RelayBoardItemInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\Board\SwitchBoardControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Board\SwitchBoardItemInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\ControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\DelayControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\DMX\DMXChannelInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\DMX\DMXControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\AdjustVolumeMusicActionExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\MusicActionExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\MusicControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\MusicMarkManager.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\PauseMusicActionExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\PlayMusicActionExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Music\TextToSpeakActionExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\Notification\BoardParamInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\Notification\MusicParamInfo.cs" />
+    <Compile Include="Models\ControlleExcutes\Notification\NotificationControllerExcute.cs" />
+    <Compile Include="Models\ControlleExcutes\ProjectorControllerExcute.cs" />
+    <Compile Include="Models\ControllerInfo.cs" />
+    <Compile Include="Models\ControllerXmlInfo.cs" />
+    <Compile Include="Models\DMXGroupXmlInfo.cs" />
+    <Compile Include="Models\Enums\BoardType.cs" />
+    <Compile Include="Models\Enums\DifficulySystemType.cs" />
+    <Compile Include="Models\Enums\ExcuteType.cs" />
+    <Compile Include="Models\Enums\MusicControlType.cs" />
+    <Compile Include="Models\Enums\NotificationCommandType.cs" />
+    <Compile Include="Models\Enums\ProjectorType.cs" />
+    <Compile Include="Models\Enums\WorkFlewGroupType.cs" />
+    <Compile Include="Models\FolderInfo.cs" />
+    <Compile Include="Models\MarkMatchInfo.cs" />
+    <Compile Include="Models\MusicGroupXmlInfo.cs" />
+    <Compile Include="Models\MusicMarkMatchInfo.cs" />
+    <Compile Include="Models\NotificationGroupXmlInfo.cs" />
+    <Compile Include="Models\ProjectInfo.cs" />
+    <Compile Include="Models\ProjectorGroupXmlInfo.cs" />
+    <Compile Include="Models\ProjectorMarkMatchInfo.cs" />
+    <Compile Include="Models\ProjectXmlInfo.cs" />
+    <Compile Include="Models\ServiceAddressInfo.cs" />
+    <Compile Include="Models\TreeModels\TreeItemBase.cs" />
+    <Compile Include="Models\TreeModels\TreeItemXmlBase.cs" />
+    <Compile Include="Models\WorkFlewGroupXmlInfo.cs" />
+    <Compile Include="Models\WorkFlew\WorkFlewInfo.cs" />
+    <Compile Include="SendWcfCommand.cs" />
+    <Compile Include="TemplateSelector\ControllerExcuteDataTemplateSelector.cs" />
+    <Compile Include="TemplateSelector\MusicControllerExcuteDataTemplateSelector.cs" />
+    <Compile Include="TemplateSelector\ProjectTabDataTemplateSelector.cs" />
+    <Compile Include="TemplateSelector\ProjectTreeDataTemplateSelector.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewModel.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Controls\EditTextControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EditTextControlEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\AddWorkFlewDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditAppBoardParamDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditAppMusicParamDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditBoardDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditMarkServiceAddressDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditMusicVolumeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditServiceAddressDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\EditServiceAddressListDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\NewBoardDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\NewControllerExcuteDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\NewMusicControllerExcuteDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\NewProjectDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectBoardItemDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectMarkServiceAddressDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\BoardControllerExcuteDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ControllerTabItemDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\DelayControllerExcuteDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\DMXControllerExcuteDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\MusicControllerExcuteDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\NotificationControllerExcuteDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ProjectBoardTabDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ProjectorControllerExcuteDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ProjectTabDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ProjectTreeDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ProjectWorkFlewTabDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TLAuto.Device\Dev\TLAuto.Device.Contracts\TLAuto.Device.Contracts.csproj">
+      <Project>{6831f87e-16f9-4da9-a51f-667446f94bdd}</Project>
+      <Name>TLAuto.Device.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TLAuto.Lib\Main\TLAuto.BaseEx\TLAuto.BaseEx.csproj">
+      <Project>{8ad58ceb-dffd-4995-b6e0-710e5bc45624}</Project>
+      <Name>TLAuto.BaseEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TLAuto.Lib\Main\TLAuto.Base\TLAuto.Base.csproj">
+      <Project>{293e947e-f356-451b-af27-d16cef93091b}</Project>
+      <Name>TLAuto.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TLAuto.Lib\Main\TLAuto.Log\TLAuto.Log.csproj">
+      <Project>{c0d5a349-61e8-4f7c-821a-47ee88659610}</Project>
+      <Name>TLAuto.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TLAuto.Lib\Main\TLAuto.Wcf\TLAuto.Wcf.csproj">
+      <Project>{712843f8-26c7-413d-84f9-498ab6e80648}</Project>
+      <Name>TLAuto.Wcf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TLAuto.Music\TLAuto.Music.Contracts\TLAuto.Music.Contracts.csproj">
+      <Project>{04e7709a-7361-480b-a7c2-0503f092a957}</Project>
+      <Name>TLAuto.Music.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TLAuto.Notification\TLAuto.Notification.Contracts\TLAuto.Notification.Contracts.csproj">
+      <Project>{911bd64b-ca8d-4641-b95f-735c1d4c0c76}</Project>
+      <Name>TLAuto.Notification.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\close.png" />
+    <Resource Include="Resource\Image\control.ico" />
+    <Resource Include="Resource\Image\controller.png" />
+    <Resource Include="Resource\Image\edit.png" />
+    <Resource Include="Resource\Image\folder.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

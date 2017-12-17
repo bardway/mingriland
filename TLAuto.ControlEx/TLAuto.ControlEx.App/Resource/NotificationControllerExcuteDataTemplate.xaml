@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                    xmlns:models="clr-namespace:TLAuto.ControlEx.App.Models"
+                    xmlns:notification="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes.Notification">
+    <converters:ClassDescriptionConverter x:Key="ClassDescriptionConvert" />
+    <converters:EnumDescriptionConverter x:Key="EnumDescriptionConvert" />
+
+    <DataTemplate x:Key="NotificationItemDataTempladte" DataType="models:MarkMatchInfo">
+        <TextBlock Text="{Binding Mark}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="NotificationControllerExcuteDataTemplate" DataType="notification:NotificationControllerExcute">
+        <GroupBox Header="{Binding}" Margin="5" Padding="5">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="选择标识符：" VerticalAlignment="Center" />
+                <ComboBox Margin="5,0,0,0" ItemsSource="{Binding NotificationMarks}" VerticalAlignment="Center"
+                          SelectedValuePath="Mark" SelectedValue="{Binding SelectedNotificationMark, Mode=TwoWay}" ItemTemplate="{StaticResource NotificationItemDataTempladte}" />
+                <TextBlock Text="操作类型：" VerticalAlignment="Center" Margin="20,0,0,0" />
+                <ComboBox Margin="5,0,0,0" ItemsSource="{Binding NotificationCommandTypes}" VerticalAlignment="Center" SelectedItem="{Binding SelectedNotificationCommandType, Mode=TwoWay}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConvert}}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <StackPanel x:Name="StatusPanel" Orientation="Horizontal" Visibility="Collapsed" Margin="20,0,0,0">
+                    <TextBlock Text="APP状态" VerticalAlignment="Center" />
+                    <ComboBox Margin="5,0,0,0" ItemsSource="{Binding AppStatusTypes}" VerticalAlignment="Center" SelectedItem="{Binding SelectedAppStatusType, Mode=TwoWay}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConvert}}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBlock Text="跳过APP进程名：" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <TextBox Margin="5,0,0,0" Text="{Binding BreakProcessName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                    <CheckBox Margin="5,0,0,0" IsChecked="{Binding IsCheckedForSetAppStatus, Mode=TwoWay}" Content="是否转变为设置状态" />
+                </StackPanel>
+                <StackPanel x:Name="FileParamPanel" Orientation="Horizontal" Visibility="Collapsed" Margin="20,0,0,0">
+                    <TextBlock Text="文件路径：" VerticalAlignment="Center" />
+                    <TextBox Margin="5,0,0,0" Text="{Binding FilePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                    <TextBlock Text="附加参数" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <TextBox Margin="5,0,0,0" Text="{Binding StartArgs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                    <Button Width="140" Content="工业版开关参数传入" VerticalAlignment="Center" Margin="5,0,0,0" Command="{Binding InputBoardParamCommand}" />
+                    <Button Width="140" Content="工业版继电器参数传入" VerticalAlignment="Center" Margin="5,0,0,0" Command="{Binding OutputBoardParamCommand}" />
+                    <Button Width="140" Content="音乐参数传入" VerticalAlignment="Center" Margin="5,0,0,0" Command="{Binding MusicParamCommand}" />
+                    <Button Width="140" Content="写入配置文件(开发测试用)" Margin="5,0,0,0" Command="{Binding TestCommand}" />
+                    <Button Width="140" Content="启动APP(开发测试用)" Margin="5,0,0,0" Command="{Binding TestStartCommand}" />
+                </StackPanel>
+                <StackPanel x:Name="StopAppPanel" Orientation="Horizontal" Visibility="Collapsed" Margin="20,0,0,0">
+                    <TextBlock Text="App进程名：" VerticalAlignment="Center" />
+                    <TextBox Margin="5,0,0,0" Text="{Binding ProcessName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding SelectedNotificationCommandType}" Value="Status">
+                <Setter TargetName="StatusPanel" Property="Visibility" Value="Visible" />
+                <Setter TargetName="FileParamPanel" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="StopAppPanel" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding SelectedNotificationCommandType}" Value="StartApp">
+                <Setter TargetName="FileParamPanel" Property="Visibility" Value="Visible" />
+                <Setter TargetName="StatusPanel" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="StopAppPanel" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding SelectedNotificationCommandType}" Value="ShutDown">
+                <Setter TargetName="FileParamPanel" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="StatusPanel" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="StopAppPanel" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding SelectedNotificationCommandType}" Value="StopApp">
+                <Setter TargetName="StopAppPanel" Property="Visibility" Value="Visible" />
+                <Setter TargetName="FileParamPanel" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="StatusPanel" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+</ResourceDictionary>

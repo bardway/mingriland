@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                    xmlns:controlleExcutes="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes">
+    <converters:ClassDescriptionConverter x:Key="ClassDescriptionConvert" />
+    <converters:EnumDescriptionConverter x:Key="EnumDescriptionConvert" />
+
+    <DataTemplate x:Key="ProjectorControllerExcuteDataTemplate" DataType="controlleExcutes:ProjectorControllerExcute">
+        <GroupBox Header="{Binding}" Margin="5" Padding="5">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="选择标识符：" VerticalAlignment="Center" />
+                <ComboBox Margin="5,0,0,0" ItemsSource="{Binding ProjectorMarks}" VerticalAlignment="Center"
+                          SelectedValuePath="Mark" SelectedValue="{Binding SelectedProjectorMark, Mode=TwoWay}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Mark}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock Text="操作类型：" VerticalAlignment="Center" Margin="20,0,0,0" />
+                <ComboBox Margin="5,0,0,0" ItemsSource="{Binding ProjectorTypes}" VerticalAlignment="Center" SelectedItem="{Binding SelectedProjectorType, Mode=TwoWay}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConvert}}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,96 @@
+﻿<Window x:Class="TLAuto.Notification.ServerHost.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:command="http://www.galasoft.ch/mvvmlight"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+        xmlns:models="clr-namespace:TLAuto.Notification.ServerHost.Models"
+        mc:Ignorable="d"
+        Title="AppNotification Manager" Height="600" Width="800" Style="{StaticResource WindowIconStyleForDialog}"
+        DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
+    <Window.Resources>
+        <converters:BooleanToBooleanConverter x:Key="BooleanToBooleanConvert" />
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <command:EventToCommand Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closing">
+            <command:EventToCommand Command="{Binding ClosingCommand}" PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="配置">
+                <MenuItem Header="启动通讯服务" Command="{Binding StartServiceHostCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="../Resource/Image/startservice.png" Width="12" Height="12" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="停止通讯服务" Command="{Binding StopServiceHostCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="../Resource/Image/stopservice.png" Width="12" Height="12" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="通讯服务地址" Command="{Binding SettingsServiceAddressCommand}" />
+            </MenuItem>
+        </Menu>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding NotificationVm.NotificationInfos}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="models:NotificationInfo">
+                        <GroupBox Header="{Binding}" Margin="5">
+                            <GroupBox.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Width="18" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Content="×" Command="{Binding RemoveCommand}" />
+                                        <TextBlock Margin="2,0,0,0" Text="标识符：" Style="{DynamicResource TitleStyle}" VerticalAlignment="Bottom" />
+                                        <TextBlock Margin="2,0,0,0" Text="{Binding AppKey}" Style="{DynamicResource GroupTitleStyle}" VerticalAlignment="Bottom" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupBox.HeaderTemplate>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                                <TextBlock Text="状态：" Style="{DynamicResource GroupTitleStyle}" />
+                                <TextBlock Margin="5,0,0,0" Text="{Binding AppStatusType, Mode=TwoWay}" Style="{DynamicResource GroupTitleStyle}" />
+                            </StackPanel>
+                        </GroupBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <UniformGrid Grid.Row="2" Rows="1" Columns="4" Margin="5" IsEnabled="{Binding NotificationVm.IsSendCommand, Converter={StaticResource BooleanToBooleanConvert}}">
+            <Button Width="110" Content="AddAppKey" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding AddAppKeyCommand}" />
+            <Button Width="110" Content="GetAppStatus" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding GetAppStatusCommand}" />
+            <Button Width="110" Content="ShutDown" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ShutDownCommand}" />
+            <Button Width="110" Content="StopApp" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding StopAppCommand}" />
+        </UniformGrid>
+        <TextBox x:Name="TxtPrompt" Grid.Row="3" Height="100" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" />
+        <Border Grid.Row="4" Padding="2" BorderThickness="1" BorderBrush="Gray" Background="{DynamicResource PromptBottomBackground}">
+            <ContentControl Content="{Binding}" VerticalAlignment="Center">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" TextElement.Foreground="White">
+                            <Image x:Name="Img" Source="../Resource/Image/warning.png" Width="20" Height="20" />
+                            <TextBlock x:Name="TblAlertText" Margin="5,0,0,0" VerticalAlignment="Center" Text="通讯服务地址未连接。" />
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsOpen}" Value="True">
+                                <Setter TargetName="Img" Property="Source" Value="../Resource/Image/success.png" />
+                                <Setter TargetName="TblAlertText" Property="Text" Value="通讯服务地址连接成功。" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+﻿<Page x:Class="TLAuto.Device.Controls.NavFrame.NavPages.SerialPortSettings.SerialPortSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:serialPortSettings1="clr-namespace:TLAuto.Device.Controls.NavFrame.NavPages.SerialPortSettings"
+      mc:Ignorable="d"
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="SerialPortSettingsPage" KeepAlive="True" Loaded="Page_Loaded">
+    <Page.Resources>
+        <ObjectDataProvider x:Key="SerialPortBauRates" ObjectType="{x:Type serialPortSettings1:SerialPortSettingsHelper}" MethodName="GetSerialPortBaudRates" />
+        <ObjectDataProvider x:Key="SerialPortDataBits" ObjectType="{x:Type serialPortSettings1:SerialPortSettingsHelper}" MethodName="GetSerialPortDataBits" />
+        <ObjectDataProvider x:Key="SerialPortParity" ObjectType="{x:Type serialPortSettings1:SerialPortSettingsHelper}" MethodName="GetParitys" />
+        <ObjectDataProvider x:Key="SerialPortStopBits" ObjectType="{x:Type serialPortSettings1:SerialPortSettingsHelper}" MethodName="GetStopBits" />
+        <serialPortSettings1:PortHeaderNameConverter x:Key="PortHeaderNameConvert" />
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="串口号标识名：" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <TextBox x:Name="TxtPortSignName" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextChanged="TxtPortSignName_TextChanged" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="串口号：" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <ComboBox x:Name="CboPortNames" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" SelectionChanged="CboPortNames_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource PortHeaderNameConvert}">
+                                <Binding Path="Item1" />
+                                <Binding Path="Item2" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="波特率：" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <ComboBox x:Name="CboBaudRates" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" SelectionChanged="CboBaudRates_SelectionChanged"
+                  ItemsSource="{Binding Source={StaticResource SerialPortBauRates}}" SelectedIndex="8" />
+        <TextBlock Text="数据位：" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <ComboBox x:Name="CboDataBits" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" SelectionChanged="CboDataBits_SelectionChanged"
+                  ItemsSource="{Binding Source={StaticResource SerialPortDataBits}}" SelectedIndex="3" />
+        <TextBlock Text="检验位：" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <ComboBox x:Name="CboParitys" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" SelectionChanged="CboParitys_SelectionChanged"
+                  ItemsSource="{Binding Source={StaticResource SerialPortParity}}" SelectedIndex="0" />
+        <TextBlock Text="停止位：" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <ComboBox x:Name="CboStopBits" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" SelectionChanged="CboStopBits_SelectionChanged"
+                  ItemsSource="{Binding Source={StaticResource SerialPortStopBits}}" SelectedIndex="1" />
+    </Grid>
+</Page>

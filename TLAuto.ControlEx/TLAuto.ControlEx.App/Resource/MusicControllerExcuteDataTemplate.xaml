@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:TLAuto.BaseEx.Converters;assembly=TLAuto.BaseEx"
+                    xmlns:models="clr-namespace:TLAuto.ControlEx.App.Models"
+                    xmlns:music="clr-namespace:TLAuto.ControlEx.App.Models.ControlleExcutes.Music"
+                    xmlns:templateSelector="clr-namespace:TLAuto.ControlEx.App.TemplateSelector">
+    <converters:ClassDescriptionConverter x:Key="ClassDescriptionConvert" />
+    <converters:BooleanToVisibilityExConverter x:Key="BooleanToVisibilityExConvert" />
+
+    <DataTemplate x:Key="MusicItemDataTempladte" DataType="models:MarkMatchInfo">
+        <TextBlock Text="{Binding Mark}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="PlayMusicDataTemplate" DataType="music:PlayMusicActionExcute">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="选择标识符：" Margin="5" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" ItemsSource="{Binding MarkManager.MusicMarks}" VerticalAlignment="Center"
+                      SelectedValuePath="Mark" SelectedValue="{Binding MarkManager.SelectedMusicMark, Mode=TwoWay}" ItemTemplate="{StaticResource MusicItemDataTempladte}" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Text="文件路径：" VerticalAlignment="Center" />
+            <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox VerticalAlignment="Center" Text="{Binding FilePath}" ToolTip="{Binding FilePath}" />
+                <Button Grid.Column="1" Content="..." Width="18" Height="18" Margin="5,0,0,0" VerticalAlignment="Center" Command="{Binding BrowseCommand}" />
+            </Grid>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="音量：" Margin="5" VerticalAlignment="Center" />
+            <Slider Grid.Row="2" Grid.Column="1" Margin="5" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay, Delay=1000}" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="1" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="是否循环：" Margin="5" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center" SelectedValuePath="Tag" SelectedValue="{Binding IsRepeat, Mode=TwoWay}">
+                <ComboBoxItem Tag="True" Content="是" />
+                <ComboBoxItem Tag="False" Content="否" />
+            </ComboBox>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PauseMusicDataTemplate" DataType="music:PauseMusicActionExcute">
+        <Grid VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Text="暂停所有：" Margin="5" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center" SelectedValuePath="Tag" SelectedValue="{Binding IsPauseAll, Mode=TwoWay}">
+                <ComboBoxItem Tag="False" Content="否" />
+                <ComboBoxItem Tag="True" Content="是" />
+            </ComboBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="选择标识符：" Margin="5" VerticalAlignment="Center" Visibility="{Binding IsPauseAll, Converter={StaticResource BooleanToVisibilityExConvert}}" />
+            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" ItemsSource="{Binding MarkManager.MusicMarks}" VerticalAlignment="Center"
+                      SelectedValuePath="Mark" SelectedValue="{Binding MarkManager.SelectedMusicMark, Mode=TwoWay}" ItemTemplate="{StaticResource MusicItemDataTempladte}"
+                      Visibility="{Binding IsPauseAll, Converter={StaticResource BooleanToVisibilityExConvert}}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AdjustVolumeMusicDataTemplate" DataType="music:AdjustVolumeMusicActionExcute">
+        <Grid VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Text="调整所有：" Margin="5" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center" SelectedValuePath="Tag" SelectedValue="{Binding IsAdjustVolumeAll, Mode=TwoWay}">
+                <ComboBoxItem Tag="False" Content="否" />
+                <ComboBoxItem Tag="True" Content="是" />
+            </ComboBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="音量：" Margin="5" VerticalAlignment="Center" />
+            <Slider Grid.Row="1" Grid.Column="1" Margin="5" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay, Delay=1000}" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="1" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="选择标识符：" Margin="5" VerticalAlignment="Center" Visibility="{Binding IsAdjustVolumeAll, Converter={StaticResource BooleanToVisibilityExConvert}}" />
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" ItemsSource="{Binding MarkManager.MusicMarks}" VerticalAlignment="Center"
+                      SelectedValuePath="Mark" SelectedValue="{Binding MarkManager.SelectedMusicMark, Mode=TwoWay}" ItemTemplate="{StaticResource MusicItemDataTempladte}"
+                      Visibility="{Binding IsAdjustVolumeAll, Converter={StaticResource BooleanToVisibilityExConvert}}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TextToSpeakDataTemplate" DataType="music:TextToSpeakActionExcute">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="语音文本：" Margin="5" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SpeakText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" TextWrapping="Wrap" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="音量：" Margin="5" VerticalAlignment="Center" />
+            <Slider Grid.Row="1" Grid.Column="1" Margin="5" Minimum="0" Maximum="100" Value="{Binding Volume, Mode=TwoWay}" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="1" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="选择标识符：" Margin="5" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" ItemsSource="{Binding MarkManager.MusicMarks}" VerticalAlignment="Center"
+                      SelectedValuePath="Mark" SelectedValue="{Binding MarkManager.SelectedMusicMark, Mode=TwoWay}" ItemTemplate="{StaticResource MusicItemDataTempladte}" />
+        </Grid>
+    </DataTemplate>
+
+    <templateSelector:MusicControllerExcuteDataTemplateSelector x:Key="MusicControllerExcuteDataTemplateSelector"
+                                                                PlayDataTemplate="{StaticResource PlayMusicDataTemplate}"
+                                                                PauseDataTemplate="{StaticResource PauseMusicDataTemplate}"
+                                                                AdjustVolumeDataTemplate="{StaticResource AdjustVolumeMusicDataTemplate}"
+                                                                TextToSpeakDataTemplate="{StaticResource TextToSpeakDataTemplate}" />
+
+    <DataTemplate x:Key="MusicControllerExcuteDataTemplate" DataType="music:MusicControllerExcute">
+        <GroupBox Header="{Binding}" Margin="5">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" VerticalAlignment="Center" Style="{DynamicResource TitleStyle}" />
+                        <Button Content="+" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding AddMusicExcuteCommand}" />
+                        <Button Content="-" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding RemoveMusicExcuteCommand}" />
+                        <Button Content="↑" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding UpMusicExcuteCommand}" />
+                        <Button Content="↓" Width="18" Height="18" Margin="10,0,0,0" Command="{Binding DownMusicExcuteCommand}" />
+                    </StackPanel>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <ItemsControl ItemsSource="{Binding MusicActionExcutes}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <GroupBox Padding="5" Margin="10" Header="{Binding}">
+                            <GroupBox.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" />
+                                        <TextBlock Text="{Binding Converter={StaticResource ClassDescriptionConvert}}" Margin="5,0,0,0" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupBox.HeaderTemplate>
+                            <ContentControl Width="200" Content="{Binding}" ContentTemplateSelector="{StaticResource MusicControllerExcuteDataTemplateSelector}" />
+                        </GroupBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </DataTemplate>
+</ResourceDictionary>

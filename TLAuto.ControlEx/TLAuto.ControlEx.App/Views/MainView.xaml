@@ -1,0 +1,162 @@
+﻿<Window x:Class="TLAuto.ControlEx.App.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:TLAuto.ControlEx.App.ViewModels"
+        xmlns:templateSelector="clr-namespace:TLAuto.ControlEx.App.TemplateSelector"
+        xmlns:converter="clr-namespace:TLAuto.ControlEx.App.Converter"
+        xmlns:mvvm="clr-namespace:TLAuto.BaseEx.Mvvm;assembly=TLAuto.BaseEx"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:treeModels="clr-namespace:TLAuto.ControlEx.App.Models.TreeModels"
+        xmlns:command="http://www.galasoft.ch/mvvmlight"
+        xmlns:behaviors="clr-namespace:TLAuto.ControlEx.App.Behaviors"
+        xmlns:attachedPropertys="clr-namespace:TLAuto.BaseEx.AttachedPropertys;assembly=TLAuto.BaseEx"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="864" Width="1152" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Style="{StaticResource WindowIconStyle}">
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/ProjectTreeDataTemplate.xaml" />
+                <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/ProjectTabDataTemplate.xaml" />
+                <ResourceDictionary Source="/TLAuto.ControlEx.App;component/Resource/ControllerTabItemDataTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converter:AddItemToListConverter x:Key="AddItemToListConvert" />
+            <templateSelector:ProjectTreeDataTemplateSelector x:Key="ProjectTreeDataTemplateSelector"
+                                                              ProjectTreeItemDataTemplate="{StaticResource ProjectTreeItemDataTemplate}"
+                                                              FolderTreeItemDataTemplate="{StaticResource FolderTreeItemDataTemplate}"
+                                                              ControllerTreeItemDataTemplate="{StaticResource ControllerTreeItemDataTemplate}" />
+
+            <templateSelector:ProjectTabDataTemplateSelector x:Key="ProjectTabDataTemplateSelector"
+                                                             ProjectTabItemDataTemplate="{StaticResource ProjectTabItemDataTemplate}"
+                                                             ControllerTabItemDataTemplate="{StaticResource ControllerTabItemDataTemplate}" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.InputBindings>
+        <mvvm:RelayKeyBinding Key="O" Modifiers="Control" Command="{Binding OpenProjectCommand}" />
+        <mvvm:RelayKeyBinding Key="S" Modifiers="Control" Command="{Binding SaveProjectCommand}" />
+        <mvvm:RelayKeyBinding Gesture="Ctrl+Shift+S" Command="{Binding AllSaveProjectCommand}" />
+    </Window.InputBindings>
+    <i:Interaction.Triggers>
+        <mvvm:RoutedEventTrigger RoutedEvent="treeModels:TreeItemBase.TabItemClosed">
+            <command:EventToCommand Command="{Binding TreeVm.TabItemClosedCommand}" PassEventArgsToCommand="True" />
+        </mvvm:RoutedEventTrigger>
+        <i:EventTrigger EventName="Closed">
+            <command:EventToCommand Command="{Binding ClosedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closing">
+            <command:EventToCommand Command="{Binding ClosingCommand}" PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="文件">
+                <MenuItem Header="新建">
+                    <MenuItem Header="房间控制" Command="{Binding NewPorjectCommand}" />
+                </MenuItem>
+                <MenuItem Header="打开" Command="{Binding OpenProjectCommand}" />
+                <MenuItem Header="保存(Ctrl+S)" Command="{Binding SaveProjectCommand}" />
+                <MenuItem Header="全部保存(Ctrl+Shift+S)" Command="{Binding AllSaveProjectCommand}" />
+                <MenuItem Header="关闭" Command="{Binding CloseProjectCommand}" />
+            </MenuItem>
+            <MenuItem Header="配置" IsEnabled="{Binding TreeVm.HasProject}">
+                <MenuItem Header="工业版通讯服务地址配置" Command="{Binding BoardServiceAddressSettingsCommand}" />
+                <MenuItem Header="投影仪通讯服务地址配置" Command="{Binding ProjectorServiceAddressSettingsCommand}" />
+                <MenuItem Header="音乐通讯服务地址配置" Command="{Binding MusicServiceAddressSettingsCommand}" />
+                <MenuItem Header="应用通知通讯服务地址配置" Command="{Binding AppNotificationServiceAddressSettingsCommand}" />
+                <MenuItem Header="灯光舞台通讯服务地址配置" Command="{Binding DMXServiceAddressSettingsCommand}" />
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="8*" />
+            </Grid.ColumnDefinitions>
+            <TabControl TabStripPlacement="Bottom">
+                <TabItem Header="解决方案资源管理器">
+                    <TreeView x:Name="ProjectTree" BorderBrush="Transparent" BorderThickness="0" ItemsSource="{Binding TreeVm.Project, Converter={StaticResource AddItemToListConvert}}"
+                              ItemTemplateSelector="{StaticResource ProjectTreeDataTemplateSelector}">
+                        <TreeView.Resources>
+                            <InputBindingCollection x:Shared="False" x:Key="InputBindings">
+                                <mvvm:RelayKeyBinding Key="F2" Command="{Binding RenameCommand}" />
+                                <mvvm:RelayKeyBinding Key="Delete" Command="{Binding DeleteForShortcutCommand}" CommandParameter="{Binding ElementName=ProjectTree}" />
+                            </InputBindingCollection>
+                        </TreeView.Resources>
+                        <i:Interaction.Behaviors>
+                            <behaviors:MouseRightButtonSelectedMenuForTreeBehavior />
+                            <behaviors:TreeItemDragDropBehavior />
+                        </i:Interaction.Behaviors>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectedItemChanged">
+                                <command:EventToCommand Command="{Binding TreeVm.SelectedItemChangedCommand}" PassEventArgsToCommand="True" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseDoubleClick">
+                                <command:EventToCommand Command="{Binding TreeVm.PreviewMouseDoubleClickCommand}" PassEventArgsToCommand="True" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <TreeView.ItemContainerStyle>
+                            <Style TargetType="TreeViewItem">
+                                <Setter Property="attachedPropertys:AttachedInputBindings.InputBindings" Value="{StaticResource InputBindings}" />
+                                <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                            </Style>
+                        </TreeView.ItemContainerStyle>
+                    </TreeView>
+                </TabItem>
+            </TabControl>
+            <GridSplitter Grid.Column="1" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="5" />
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <TabControl x:Name="Tc" TabStripPlacement="Top" ItemsSource="{Binding TreeVm.TabTreeItems}"
+                            ContentTemplateSelector="{StaticResource ProjectTabDataTemplateSelector}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <command:EventToCommand Command="{Binding TreeVm.TabSelectedItemChangedCommand}" PassEventArgsToCommand="True" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <TabControl.ItemContainerStyle>
+                        <Style TargetType="TabItem">
+                            <Setter Property="IsSelected" Value="{Binding IsTabSelected, Mode=TwoWay}" />
+                        </Style>
+                    </TabControl.ItemContainerStyle>
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDown">
+                                        <command:EventToCommand Command="{Binding TabItemTitleMouseDownCommand}" PassEventArgsToCommand="True" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding HeaderName}" TextTrimming="CharacterEllipsis" />
+                                <Button Grid.Column="1" Width="16" Height="16" Margin="5,0,0,0">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Click">
+                                            <command:EventToCommand Command="{Binding TabItemCloseCommand}" PassEventArgsToCommand="True" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="../Resource/Image/close.png" />
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                </TabControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
